@@ -1,0 +1,15 @@
+/*
+    css/style.css 주석달기 : 자바 멀티라인 주석
+*/
+
+html, body { 
+    max-width:100%; 
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a:link { text-decoration:none; color: #333333; }
+a:hover { text-decoration:none; color: #0000FF; }
+a:visited { text-decoration:none; color: #333333; }
