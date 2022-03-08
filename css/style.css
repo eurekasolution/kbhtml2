@@ -10,6 +10,11 @@ html, body {
     max-width:100%; 
 }
 
+body 
+{
+    
+}
+
 table {
     border-collapse: collapse;
 }
@@ -40,6 +45,7 @@ p {
     margin:20px; 
     padding:0px 20px 30px 40px;
     border:2px dotted #FF0000;
+    text-align:justify;
 }
 
 li {
@@ -60,4 +66,38 @@ li {
 
 .test2 {
     font-family: 궁서;
+}
+
+h1 {
+    background-color:rgba(255, 0, 0, 0.5);
+    border-radius:0px 10px 20px 30px;
+}
+
+#aaa{
+    background-color:#FFFF00;
+    float:left;
+    width:300px;
+}
+#bbb{
+    background-color:#FF0000;
+    margin-left:20px;
+    float:right;
+    width:200px;
+    height:300px;
+    
+}
+#ccc{
+    background-color:#00FF00;
+    position:absolute;
+    top:400px;
+    left:500px;
+}
+#ddd{
+    background-color:#0000FF;
+}
+#eee{
+    background-color:#FF00FF;
+}
+#fff{
+    background-color:#00FFFF;
 }
