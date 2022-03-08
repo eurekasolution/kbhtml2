@@ -1,5 +1,9 @@
 /*
     css/style.css 주석달기 : 자바 멀티라인 주석
+    선택자(Selector)
+    태그 : li, body
+    클래스 : .className
+    아이디 : #idName
 */
 
 html, body { 
@@ -16,5 +20,44 @@ a:visited { text-decoration:none; color: #333333; }
 
 .team {
     font-weight:bold;
-    color:#00FF00;
+    color:#0000FF;
+    background-color:#FFFF00;
+}
+.man {
+    /*font-weight:bold;*/
+    color:#0000FF;
+    background-color:#FF00FF;
+}
+
+p {
+    line-height:200%;
+    font-size:20px;
+}
+
+.paragraph {
+    line-height:180%;
+    font-size:14px;
+    margin:20px; 
+    padding:0px 20px 30px 40px;
+    border:2px dotted #FF0000;
+}
+
+li {
+    list-style-type: square;
+    /*
+    list-style-image: url('img/kbstar.gif');
+    */
+}
+
+#redbox {
+    border:2px solid #FF0000;
+    border-radius:7px;  
+}
+
+.test1 {
+    font-weight:bold;
+}
+
+.test2 {
+    font-family: 궁서;
 }
