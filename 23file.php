@@ -30,8 +30,27 @@
 				파일 업로드 확인<br>
 
 				<?php
-					$fileName = $_POST["upfile"];
-					echo "file = $fileName <br>";
+
+					$targetDir = "data/upload/";
+					$file = $targetDir . basename($_FILES["upfile"]["name"]);
+					echo "file = $file <br>";
+
+					if(isset($_POST["submit"]))
+					{
+						echo "XXX1<br>";
+						$myImg = getImageSize($_FILES["upfile"]["tmp_name"]);
+
+						if(move_uploaded_file($_FILES["upfile"]["tmp_name"], $file)) 
+						{
+							$tmp_name = $_FILES["upfile"]["tmp_name"];
+							echo "tmp_name = $tmp_name";
+						}
+					}else
+					{
+						echo "XXX2<br>";
+					}
+
+					
 				?>
 
 			</div>

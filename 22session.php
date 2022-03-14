@@ -97,10 +97,10 @@
 		<div class="row">
 			<div class="col-2">파일</div>
 			<div class="col">
-				<input type="file" name="upfile" class="form-control">
+				<input type="file" name="upfile" id="upfile" class="form-control">
 			</div>
 			<div class="col-2">
-				<button type="submit" class="btn btn-primary">업로드</button>
+				<button type="submit" name="submit" class="btn btn-primary">업로드</button>
 			</div>
 		</div>
 
