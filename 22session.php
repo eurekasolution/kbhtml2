@@ -51,10 +51,11 @@
 					{
 						?>
 						<form method="post" action="login.php">
-						<input type="text" name="id" placehoder="ID">
-						<input type="password" name="pass" placehoder="비밀번호">
-						<button type="submit" class="btn btn-primary">로그인</button>
-
+						<div class="col text-end">
+							<input type="text" name="id" placehoder="ID">
+							<input type="password" name="pass" placehoder="비밀번호">
+							<button type="submit" class="btn btn-primary">로그인</button>
+						</div>
 						</form>
 
 						<?php
@@ -62,6 +63,48 @@
 				?>
 			
 		</div>
+
+		<div class="row">
+			<div class="col-2">지역선택</div>
+			<div class="col">
+				<select name="area" class="form-control">
+				<?php
+					$areaList ="서울,경기,충남,충북,전남,전북,울릉,해외,미국,일본,경남,경북,부산,제주,울산,강원";
+					$splitArea = explode(",", $areaList);
+					/*
+						$splitArea[0] = 서울
+								 [1] = 경기
+					*/
+
+					$cnt = 0;
+
+					while(isset($splitArea[$cnt]))
+					{
+						if($cnt == 5)
+							$mark = "selected";
+						else
+							$mark = "";
+						echo "<option value='$cnt' $mark>$splitArea[$cnt]</option>";
+						$cnt++;
+					}
+
+				?>
+				</select>
+			</div>
+		</row>
+
+		<form method="post" enctype="multipart/form-data" action="23file.php">
+		<div class="row">
+			<div class="col-2">파일</div>
+			<div class="col">
+				<input type="file" name="upfile" class="form-control">
+			</div>
+			<div class="col-2">
+				<button type="submit" class="btn btn-primary">업로드</button>
+			</div>
+		</div>
+
+		</form>
 
 
 
