@@ -44,6 +44,13 @@
 						{
 							$tmp_name = $_FILES["upfile"]["tmp_name"];
 							echo "tmp_name = $tmp_name";
+
+							echo "
+							<img src='$file' class='img-fluid'>
+
+							<button type='button' class='btn btn-primary' onClick=\"location.href='22session.php'\">등록화면</button>
+							";
+
 						}
 					}else
 					{

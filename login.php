@@ -7,7 +7,7 @@
 
     if(isset($_POST["id"])  and $_POST["id"] =="test" )
     {
-        $_SESSION[$sessName] = "국민Name";
+        $_SESSION[$sessName] = "홍길동";
         $_SESSION[$sessId] = "test";
         $msg = "반갑습니다.";
     } else

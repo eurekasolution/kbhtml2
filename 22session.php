@@ -91,7 +91,7 @@
 				?>
 				</select>
 			</div>
-		</row>
+		</div>
 
 		<form method="post" enctype="multipart/form-data" action="23file.php">
 		<div class="row">
@@ -105,6 +105,47 @@
 		</div>
 
 		</form>
+
+		<!--
+		회원가입폼(로그인 되어있으면... 값을 써주고, 맨 마지막 버튼을 빨간 수정
+		로그인이 안되어있으면, 빈값으로만 보여주고, 파란색 등록)
+		아이디, 이름
+		<br>
+		-->
+
+		<?php
+			if(isset($_SESSION[$sessId]))
+			{
+
+				$color = "danger";
+			}else
+			{
+				$color = "primary";
+			}
+		?>
+		
+
+				<div class="row">
+					<div class="col">이름</div>
+					<div class="col">
+						<input type="text" name="name" class="form-control" placeholder="이름입력" value="<?php if(isset($_SESSION[$sessName])) echo "$_SESSION[$sessName]"; ?>">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">아이디</div>
+					<div class="col">
+						<input type="text" name="id" class="form-control" placeholder="아이디" value="test">
+					</div>
+				</div>
+				<div class="row">
+					
+					<div class="col">
+						<button type="button" class="btn btn-<?php echo $color ?>" >수정</button>
+					</div>
+				</div>
+	
+
+
 
 
 
