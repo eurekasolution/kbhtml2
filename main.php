@@ -35,7 +35,7 @@
 
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 	<div class="container">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="main.php">
 			<span class="material-icons icon">home</span>
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuBar">
@@ -46,9 +46,18 @@
 				<li class="nav-item dropdown ms-4">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">HTML</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="main.php?cmd=01">01.html</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=02Form">02Form.html</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=03style">A third link</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=01">HTML 기초</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=02form">Form</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=03style">Stylesheet</a></li>
+					</ul>
+				</li>
+
+				<li class="nav-item dropdown ms-4">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Bootstrap</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Link4</a></li>
+						<li><a class="dropdown-item" href="#">Another link</a></li>
+						<li><a class="dropdown-item" href="#">A third link</a></li>
 					</ul>
 				</li>
 
@@ -75,7 +84,9 @@
 			로그인/아웃
 		</div>
 	</div>
+</div> <!-- container -->
 
+<div class="container" style="height:100%; min-height:500px;">
 	<?php
 		
 
@@ -84,6 +95,8 @@
 			$cmd = $_GET["cmd"];
 
 			if(file_exists("$cmd.php"))
+				include "$cmd.php";
+			else if(file_exists("admin/$cmd.php"))
 				include "$cmd.php";
 			else if(file_exists("$cmd.html"))
 				include "$cmd.html";
@@ -95,16 +108,17 @@
 			include "init.php";
 		}
 	?>
+</div> <!-- container body -->
 
-
+<div class="container">
 	<div class="row">
 		<div class="col">
 			사이트 정보
 		</div>
 	</div>
-
-
 </div>
+
+
 
 </body> 
 </html> 
