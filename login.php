@@ -1,10 +1,12 @@
 <?php
 
+    // main.php를 거치도록 바뀌어서 필요없음
+    /*
 	session_save_path("./sess");
 	session_start();
 
 	include "config.php";
-
+    */
     if(isset($_POST["id"])  and $_POST["id"] =="test" )
     {
         $_SESSION[$sessName] = "홍길동";
@@ -18,7 +20,7 @@
     echo "
     <script>
         alert('$msg');
-        location.href='22session.php';
+        location.href='main.php?cmd=22session';
     </script>
     ";
 ?>

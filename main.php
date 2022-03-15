@@ -49,15 +49,32 @@
 						<li><a class="dropdown-item" href="main.php?cmd=01">HTML 기초</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=02form">Form</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=03style">Stylesheet</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=04layout">Layout</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=05practice">Practice</a></li>
 					</ul>
 				</li>
 
 				<li class="nav-item dropdown ms-4">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Bootstrap</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Link4</a></li>
-						<li><a class="dropdown-item" href="#">Another link</a></li>
-						<li><a class="dropdown-item" href="#">A third link</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=06bs">Bootstrap</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=07grid">Grid System</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=08monitor">Monitor</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=09head">Head</a></li>						
+						<li><a class="dropdown-item" href="main.php?cmd=10color">Color</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=11img">Image</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=12button">Button</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=13badge">Badge</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=14jumbo">Jumbo</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=15alert">Alert</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=16progress">Progress</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=17nav">Nav</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=18input">Input</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=19kb">KB</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=20modal">Modal</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=21slide">Slide</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=22session">Session</a></li>
+
 					</ul>
 				</li>
 

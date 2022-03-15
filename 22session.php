@@ -1,29 +1,3 @@
-<?php
-
-	session_save_path("./sess");
-	session_start();
-
-	include "config.php";
-?>
-<!doctype html> 
-<html lang="ko"> 
-	<head> 
-		<meta charset="UTF-8"> 
- 		<title>국민은행</title> 
- 		<meta name="viewport" 
- 			content="width=device-width, maximum-scale=3.0, user-scalable=yes"> 
-		<link rel="icon" type="image/png" href="./data/img/kb32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="./data/img/kb16.png" sizes="16x16">
-	    <link rel="icon" type="image/png" href="./data/img/kb96.png" sizes="96x96">
- 		<link href="./css/Style.css" rel="stylesheet" type="text/css">  
- 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
- 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
- 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
-              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
- 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
- 	</head> 
-<body >
-
 	<div class="container">
 		<div class="row">
 
@@ -35,7 +9,7 @@
 						<script>
 							function goLogout()
 							{
-								location.href='logout.php';
+								location.href='main.php?cmd=logout';
 							}
 						</script>
 
@@ -93,7 +67,7 @@
 			</div>
 		</div>
 
-		<form method="post" enctype="multipart/form-data" action="23file.php">
+		<form method="post" enctype="multipart/form-data" action="main.php?cmd=23file">
 		<div class="row">
 			<div class="col-2">파일</div>
 			<div class="col">
@@ -163,5 +137,3 @@ HTML 영역입니다.<br>
 ?>
 
 	</div>
-</body> 
-</html> 
