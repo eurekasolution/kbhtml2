@@ -94,7 +94,7 @@
 						<li class="nav-item dropdown ms-4">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">관리자메뉴</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Link4</a></li>
+								<li><a class="dropdown-item" href="main.php?cmd=manUser">사용자 관리</a></li>
 								<li><a class="dropdown-item" href="#">Another link</a></li>
 								<li><a class="dropdown-item" href="#">A third link</a></li>
 							</ul>
@@ -164,7 +164,7 @@
 			if(file_exists("$cmd.php"))
 				include "$cmd.php";
 			else if(file_exists("admin/$cmd.php"))
-				include "$cmd.php";
+				include "admin/$cmd.php";
 			else if(file_exists("$cmd.html"))
 				include "$cmd.html";
 			else
