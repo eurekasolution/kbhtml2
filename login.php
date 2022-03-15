@@ -11,6 +11,13 @@
     {
         $_SESSION[$sessName] = "홍길동";
         $_SESSION[$sessId] = "test";
+        $_SESSION[$sessLevel] = 1;
+        $msg = "$sessName 반갑습니다.";
+    } else if(isset($_POST["id"])  and $_POST["id"] =="admin" )
+    {
+        $_SESSION[$sessName] = "관리자";
+        $_SESSION[$sessId] = "admin";
+        $_SESSION[$sessLevel] = 9;
         $msg = "$sessName 반갑습니다.";
     } else
     {

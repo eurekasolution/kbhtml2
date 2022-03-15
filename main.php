@@ -87,6 +87,22 @@
 					</ul>
 				</li>
 
+				<?php
+					if(isset($_SESSION[$sessId])  and $_SESSION[$sessLevel] >= $adminLevel )
+					{
+						?>
+						<li class="nav-item dropdown ms-4">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">관리자메뉴</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Link4</a></li>
+								<li><a class="dropdown-item" href="#">Another link</a></li>
+								<li><a class="dropdown-item" href="#">A third link</a></li>
+							</ul>
+						</li>
+						<?php
+					}
+				?>
+
 
 			</ul>
 		</div>
