@@ -15,7 +15,7 @@
     echo "
     <script>
         alert('$msg');
-        location.href='main.php?cmd=22session';
+        location.href='main.php';
     </script>
     ";
 ?>

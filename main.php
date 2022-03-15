@@ -97,9 +97,43 @@
 	</div>
 
 	<div class="row">
-		<div class="col">
-			로그인/아웃
-		</div>
+		
+
+	<?php
+					if(isset($_SESSION[$sessId]))
+					{
+						?>
+
+						<script>
+							function goLogout()
+							{
+								location.href='main.php?cmd=logout';
+							}
+						</script>
+
+						<?php
+
+						echo "
+						<div class=\"col text-end\">
+							<span class='text-primary fw-bold'>$_SESSION[$sessName]</span> 님 
+							<button type='button' class='btn btn-primary' onClick=goLogout() >Exit</button>
+						</div>	
+						";
+					}else
+					{
+						?>
+						<form method="post" action="main.php?cmd=login"> 
+						<div class="col text-end">
+							<input type="text" name="id" placehoder="ID">
+							<input type="password" name="pass" placehoder="비밀번호">
+							<button type="submit" class="btn btn-primary">로그인</button>
+						</div>
+						</form>
+
+						<?php
+					}
+				?>
+
 	</div>
 </div> <!-- container -->
 

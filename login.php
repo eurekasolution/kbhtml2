@@ -11,7 +11,7 @@
     {
         $_SESSION[$sessName] = "홍길동";
         $_SESSION[$sessId] = "test";
-        $msg = "반갑습니다.";
+        $msg = "$sessName 반갑습니다.";
     } else
     {
         $msg = "아이디와 비번을 확인하세요";
@@ -20,7 +20,7 @@
     echo "
     <script>
         alert('$msg');
-        location.href='main.php?cmd=22session';
+        location.href='main.php';
     </script>
     ";
 ?>
