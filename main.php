@@ -77,16 +77,19 @@
 	</div>
 
 	<?php
-		$cmd = $_GET("cmd");
+		
 
-		if(isset($cmd))
+		if(isset($_GET["cmd"]))
 		{
-			
+			$cmd = $_GET["cmd"];
 
-			if($cmd == "01")
-				include "01.html";
-			else if($cmd == "02Form")
-				include "02Form.html";
+			if(file_exists("$cmd.php"))
+				include "$cmd.php";
+			else if(file_exists("$cmd.html"))
+				include "$cmd.html";
+			else
+				include "error404.php";
+
 		}else
 		{
 			include "init.php";
