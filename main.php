@@ -21,8 +21,19 @@
  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
- 	</head> 
+
+		 <script src="js/kbstar.js"></script>
+
+
+	</head> 
 <body >
+
+<script>
+	// helloKbstar();
+	var i=3;
+	console.log("Hello World : " + i);
+</script>
+
 
 <div class="container">
 	<div class="row">
@@ -81,8 +92,8 @@
 				<li class="nav-item dropdown ms-4">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">JavaScript</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Link4</a></li>
-						<li><a class="dropdown-item" href="#">Another link</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=23js">Javascript</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=24js">Variable</a></li>
 						<li><a class="dropdown-item" href="#">A third link</a></li>
 					</ul>
 				</li>
