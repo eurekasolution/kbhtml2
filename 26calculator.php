@@ -1,9 +1,48 @@
 <script>
+
+    var operator = "";
+    var op1 = 0;
+    var flag = 0;
     function doNum(no)
     {
         //console.log(no);
         var display = document.querySelector("#display");
-        display.value = no;
+        
+        if(operator == "")
+        {
+
+
+            if(display.value == "0")
+            {
+                display.value = no;
+            }else
+            {
+                display.value = display.value + no;
+            }
+            console.log("operator = " +  operator + ", flag = " + flag + ", op1 = " + op1);
+
+        } else
+        {
+            if(flag == 0)
+            {
+                op1 = display.value;
+                display.value = no;
+                flag = 1;
+                console.log("operator = " +  operator + ", flag = " + flag + ", op1 = " + op1);
+
+            }else{
+                display.value = display.value + no;
+                console.log("operator = " +  operator + ", flag = " + flag + ", op1 = " + op1);
+
+            }
+
+        }
+    }
+
+    function doPlus()
+    {
+        operator = "+";
+        console.log("operator = " +  operator + ", flag = " + flag + ", op1 = " + op1);
     }
 </script>
 
