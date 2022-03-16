@@ -1,3 +1,12 @@
+<script>
+    function doNum(no)
+    {
+        //console.log(no);
+        var display = document.querySelector("#display");
+        display.value = no;
+    }
+</script>
+
 <div class="row">
     <div class="col-8">
         <input type="text" class="form-control text-end fw-bold" id="display" value="0" readonly>   
@@ -7,16 +16,16 @@
 </div>
 <div class="row">
     <div class="col-2">
-        <button type="button" class="btn btn-primary form-control" id="btn1">1</button>    
+        <button type="button" class="btn btn-primary form-control" id="btn1" onClick="doNum(1)">1</button>    
     </div>
     <div class="col-2">
-        <button type="button" class="btn btn-primary form-control" id="btn2">2</button>    
+        <button type="button" class="btn btn-primary form-control" id="btn2" onClick="doNum(2)">2</button>    
     </div>
     <div class="col-2">
         <button type="button" class="btn btn-primary form-control" id="btn3">3</button>    
     </div>
     <div class="col-2">
-        <button type="button" class="btn btn-primary form-control" id="btnPlus">+</button>    
+        <button type="button" class="btn btn-primary form-control" id="btnPlus" onClick="doPlus()">+</button>    
     </div>
     <div class="col">    
     </div>
@@ -65,7 +74,7 @@
         <button type="button" class="btn btn-primary form-control" id="btnCE">CE</button>    
     </div>
     <div class="col-2">
-        <button type="button" class="btn btn-primary form-control" id="btnEqual">=</button>    
+        <button type="button" class="btn btn-primary form-control" id="btnEqual" onClick="doEqual()">=</button>    
     </div>
     <div class="col">    
     </div>
