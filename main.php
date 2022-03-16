@@ -94,7 +94,8 @@
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="main.php?cmd=23js">Javascript</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=24js">Variable</a></li>
-						<li><a class="dropdown-item" href="#">A third link</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=25if">If </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=26calculator">Calculator </a></li>
 					</ul>
 				</li>
 

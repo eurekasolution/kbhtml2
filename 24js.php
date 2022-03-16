@@ -62,15 +62,27 @@
 <script>
     function calculateRate()
     {
-        var orgPrice = Number(document.querySelector("#org").value);
+        //var orgPrice = Number(document.querySelector("#org").value);
+        var orgPrice = Number( document.getElementById("org").value );
+
         console.log("orgPrice = " + orgPrice);
         var rate = parseInt(document.querySelector("#rate").value);
         console.log("rate = " + rate);
 
-        var result = orgPrice + rate;
+        var result = orgPrice * rate / 100;
         document.querySelector("#result").innerHTML = "합 = "+ result + "입니다.";
+
+
     }
 </script>
+
+<!--
+    if (a === b)
+    if( a !== b)
+    && : 둘다 true일 때만 true
+    || : 둘다 false일 때만 false
+    ++, <=
+-->
 
 <div class="row">
     <div class="col-2">
