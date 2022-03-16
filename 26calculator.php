@@ -1,48 +1,53 @@
 <script>
 
+    // 연산자를 기록할 메모리
     var operator = "";
-    var op1 = 0;
+    // 앞쪽 피연산자 저장할 메모리
+    var op1 = "";
+    // 깃발
     var flag = 0;
+
     function doNum(no)
     {
-        //console.log(no);
+        /*
+            if(display == 0)
+                display= 숫자
+            else
+                display = 현재 값 + 숫자
+        */
         var display = document.querySelector("#display");
-        
-        if(operator == "")
+
+        if(operator == "") 
         {
-
-
+            
             if(display.value == "0")
             {
-                display.value = no;
+                    display.value = no;
             }else
             {
-                display.value = display.value + no;
+                    display.value = display.value + no;
             }
-            console.log("operator = " +  operator + ", flag = " + flag + ", op1 = " + op1);
-
-        } else
+        }else
         {
             if(flag == 0)
             {
                 op1 = display.value;
                 display.value = no;
                 flag = 1;
-                console.log("operator = " +  operator + ", flag = " + flag + ", op1 = " + op1);
-
-            }else{
+            }else
+            {
                 display.value = display.value + no;
-                console.log("operator = " +  operator + ", flag = " + flag + ", op1 = " + op1);
-
             }
-
+            console.log("op1 = " + op1 + ", operator = " + operator + ", flag = "+ flag);
+ 
         }
     }
 
     function doPlus()
     {
+        // 연산자 = +
         operator = "+";
-        console.log("operator = " +  operator + ", flag = " + flag + ", op1 = " + op1);
+
     }
 </script>
 
