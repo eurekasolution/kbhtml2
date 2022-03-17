@@ -15,6 +15,14 @@
         <input type="text" id="op2" class="form-control" value="0" onKeyUp="calculate()">
     </div>
 </div>
+
+<div class="row">
+    <div class="col">
+        <input type="text" id="op3" class="form-control" value="0">
+    </div>
+</div>
+
+
 <div class="row">
     <div class="col">
         <input type="text" id="result" class="form-control" value="0" disabled>
@@ -23,12 +31,33 @@
 
 <script>
 
+    function fact(n)
+    {
+        if(n==1)
+            return 1;
+
+        return n * fact(n-1)
+    }
+
+    var f = fact(5);
+    console.log("5! = " + f);
+
 /*
     let : ES6 JS    () => { }
 
     a = 3; // 전역변수 global variable
     var x; // 지역변수 local variable
     Variable Life Scope
+
+
+    hi = function() {return 3; }
+
+    hi = ()=>{return 3; }
+    hi = ()=> 3;
+
+    let a = function(idx) {  }
+    lt a = idx => 
+
 */
 
     
@@ -73,6 +102,20 @@
         let y = 77;    
         debug.value = "gValue = " + gValue + ", y = " + y + ", sum = " + sum;
 
+        let sum1 = add(3, 4);
+        console.log("sum = " + sum1);
     
+        var foo = ( function() {
+            console.log("foo.....");
+            return 77;
+        }() );
+        console.log("after foo = " + foo);
     }
+
+    function add(a, b) // parameter는 이름만
+    {
+        var sum = a + b;
+        return sum;
+    }
+
 </script>
