@@ -21,6 +21,40 @@
         }
     }
 
+    function switchTest()
+    {
+        
+        var debug = document.querySelector("#debug");
+        console.log(debug);
+
+        input = "3";
+
+        switch(input)
+        {
+            case "1":
+                debug.value = debug.value + "switch 1을 선택했습니다.\n";
+                break;
+            case "2":
+                debug.value = debug.value + "switch 2을 선택했습니다.\n";
+                break;
+            case "3": 
+                console.log("dv = " + debug);
+                debug.value = "switch 3을 선택했습니다.";
+                break;
+            case "4":
+                debug.value = debug.value + "switch 4을 선택했습니다.\n";
+                break;
+            default:
+                debug.value = debug.value + "switch 알 수 없습니다..\n";
+                break;
+        }
+
+
+    }
+
+
+
+
     function ifTest()
     {
         if(false)
@@ -29,7 +63,7 @@
         }
     }
 
-    ifTest();
+    //switchTest();
 </script>
 
 <!--
@@ -38,6 +72,11 @@
     if(){} else {}
 
     if(){} else if(){} ... else{}
+
+    for(var i=1; i<=10; i++)
+    {
+
+    }
 -->
 
 
@@ -53,3 +92,22 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col">
+        <input type="text" class="form-control" id="table">
+    </div>
+</div>
+
+<script>
+
+    function forTest()
+    {
+        for(var i=1; i<=10; i++)
+        {
+            console.log("3 * " + i + " = " + (3 * i));
+        }
+    }
+
+
+    forTest();
+</script>
