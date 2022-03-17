@@ -98,6 +98,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=26calculator">Calculator </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=27if">If 2 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=28for">For </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=29function">Function </a></li>
 					
 					</ul>
 				</li>
