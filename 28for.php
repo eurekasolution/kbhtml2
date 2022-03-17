@@ -30,7 +30,7 @@
 
 <div class="row">
     <div class="col text-primary">
-       <button type="button" class="btn btn-outline-primary form-control" onMouseOver="set99()">구구단표</button>
+       <button type="button" class="btn btn-outline-primary form-control" onMouseOut="clear99()" onMouseOver="set99()">구구단표</button>
     </div>
 </div>
 
@@ -46,12 +46,32 @@
     <div class="col text-primary" id="table9"></div>
 </div>
 
-
-
 <script>
+    function clear99()
+    {
+        for(var i=1; i<=9; i++)
+        {
+            var mytable = document.querySelector("#table"+i);
+            mytable.innerHTML = "";
+        }
+    }
     function set99()
     {
-        //alert('over');
+        for(var i=1; i<=9; i++)
+        {
+            //1단 ~ 9단
+            var mytable = document.querySelector("#table"+i);
+            mytable.innerHTML = "";
+
+            var html = "";
+            for(var j = 1; j<=9; j++)
+            {
+                var value = i * j;
+                //mytable.innerHTML = mytable.innerHTML + value + "<br>"; 
+                html = html + value + "<br>";
+            }
+            mytable.innerHTML = html;
+        }
     }
 
 
