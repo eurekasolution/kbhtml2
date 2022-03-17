@@ -94,7 +94,13 @@
 
 <div class="row">
     <div class="col">
-        <input type="text" class="form-control" id="table">
+        <input type="text" class="form-control" id="table" onKeyUp="forTest()">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col" id="display">
+       
     </div>
 </div>
 
@@ -102,12 +108,22 @@
 
     function forTest()
     {
+        var table = document.querySelector("#table");
+        var display = document.querySelector("#display");
+        var no = parseInt(table.value); 
         for(var i=1; i<=10; i++)
         {
-            console.log("3 * " + i + " = " + (3 * i));
+            console.log(no + " * " + i + " = " + (no * i));
+            if(i == 1)
+            {
+                display.innerHTML = "";
+            }            
+
+            display.innerHTML = display.innerHTML + no + " * " +  i + " = " + (no * i) + "<br>";
+
         }
     }
 
 
-    forTest();
+    //forTest();
 </script>
