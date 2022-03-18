@@ -67,6 +67,23 @@
 		html+="	<div class='col'>토</div>";
 		html+="</div>";
 
+		for(let i = 1; i<= day + 31; i++ )
+		{
+			if(i % 7 == 1)
+			{
+				html += "<div class='row'>";
+			}
+
+
+			if(i % 7 == 0)
+			{
+				html += "</div>";
+			}
+
+		}
+
+
+
 		display.innerHTML=html;
 	}
 </script>
