@@ -100,7 +100,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=28for">For </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=29function">Function </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=30es6">ES6 </a></li>
-					
+						<li><a class="dropdown-item" href="main.php?cmd=31event">Event </a></li>					
 					</ul>
 				</li>
 
