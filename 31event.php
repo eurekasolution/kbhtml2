@@ -68,6 +68,33 @@
         help.className = "col";
         help.innerText = "";
     }
+
+    function controlChange()
+    {
+        //alert(obj.value);
+        /*
+        if(obj.value != "0")
+        {
+
+        }
+        */
+
+        var f = document.testForm;
+        alert(f.city.value);
+    }
+
+    function showHide(obj)
+    {
+        //alert(obj.checked);
+        let idShow = document.querySelector("#idShow");
+        if(obj.checked == true)
+        {
+            idShow.style.display = '';
+        }else
+        {
+            idShow.style.display = 'none';
+        }
+    }
 </script>
 
 <div class="row">
@@ -96,19 +123,31 @@
     <div class="col-2">도움말</div>
     <div class="col" id="help"></div>
 </div>
+<form name="testForm">
 <div class="row">
     <div class="col-2">onChange</div>
     <div class="col">
-        <select class="form-control" onChange=controlChange(this)>
+        <select name="city" class="form-control" onChange=controlChange()>
             <option value="0">=== 선택하세요 ===</option>
             <option value="1">서울</option>
             <option value="2">경기</option>
         </select>
+    </div>
+</div>
+</form>
+<div class="row">
+    <div class="col-2">onClick</div>
+    <div class="col">
+        <input type="checkbox" onClick=showHide(this) checked> ShowHide
 
     </div>
 </div>
+<div class="row" id="idShow" >
+    <div class="col-2">AAA</div>
+    <div class="col">BBB</div>
+</div>
 <div class="row">
-    <div class="col-2">onClick</div>
+    <div class="col-2"></div>
     <div class="col"></div>
 </div>
 <div class="row">
