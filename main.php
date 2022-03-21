@@ -107,6 +107,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=34array">Array </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=35chart">Google Chart </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=36event">Event </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=37editor">WYSIWYG </a></li>					
 					
 					</ul>
 				</li>

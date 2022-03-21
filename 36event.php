@@ -14,8 +14,6 @@
                 <li>홍길동</li>
             </ul>
         -->
-
-
     </div>
 </div>
 
@@ -37,6 +35,18 @@
         {
             let msgList = document.querySelector("#msgList");
             msgArray.push( msg.value );
+
+            let html = "";
+            html += "<ul>";
+
+            for(let i = 0; i < msgArray.length ; i++)
+            {
+                html += "<li>" + msgArray[i] + "</li>";
+            }
+
+            html += "</ul>";
+            msgList.innerHTML = html;
+
 
         }
     }
