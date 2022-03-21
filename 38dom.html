@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <body>
+        <h1 id="head">제목1</h1>
+        <p>본문 
+            <div>DIV1</div> 
+            <div id="mydiv"><b>Bold</b>DIV2</div> 
+        </p>
+        <img src="data/img/son.jpg" width="300" height="100">
+        <div>third div</div>
+
+        <script>
+            console.log(document.getElementById('mydiv').innerText);
+            console.log(document.getElementById('mydiv').innerHTML);
+            let head = document.querySelector("#head");
+            console.log("head = " + head);
+
+            let div = document.getElementsByTagName("div");
+            console.log("div length = " + div.length);
+
+            for(let i = 0; i < div.length; i++)
+            {
+                console.log(div[i].innerHTML);
+                console.log(div[i]);
+
+                div[i].innerHTML = i + "th div it is";
+            }
+
+        </script>
+    </body>
+</html>
