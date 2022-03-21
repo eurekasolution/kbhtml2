@@ -53,17 +53,27 @@
     function checkError()
     {
         // 기존 방법
-        var f = document.loginForm;
+        let f = document.loginForm;
         //alert(f.id.value); // document.loginForm.id.value;
-        var id = document.querySelector("#id");
+        let id = document.querySelector("#id");
        
-        var regex = /^[a-zA-Z0-9]{4,10}$/;
+        let regex = /^[a-zA-Z0-9]{4,10}$/;
         if(!regex.test(id.value))
         {
             alert("아이디는 영어 대소문자및 숫자로 4~10자입니다.");
             id.focus();
             return false;
         }
+
+        let mobile = document.querySelector("#mobile");
+        regex = /^01[016789]-[0-9]{3,4}-[0-9]{4}$/;
+        if(!regex.test(mobile.value))
+        {
+            alert("휴대전화는 010-1234-5678 형식입니다.");
+            mobile.focus();
+            return false;
+        }
+
 
     }
 
@@ -75,6 +85,12 @@
     <div class="col-2 colLine">아이디</div>
     <div class="col colLine">
         <input type="text" name="id" id="id" required class="form-control">
+    </div>
+</div>
+<div class="row">
+    <div class="col-2 colLine">휴대전화</div>
+    <div class="col colLine">
+        <input type="text" name="mobile" id="mobile" required class="form-control">
     </div>
 </div>
 
