@@ -22,6 +22,19 @@
 
         // google. wysiwyg execCommand example
     }
+
+    function setFontColor(rgb)
+    {
+        var editor = document.querySelector("#editor");
+        var html = document.querySelector("#html");
+        var content = document.querySelector("#content");
+
+        document.execCommand("foreColor", false,  rgb);
+
+        html.innerHTML = editor.innerHTML;
+        content.innerText = editor.innerText;
+    }
+
 </script>
 
 
@@ -33,6 +46,22 @@
         <button type="button" class="btn btn-secondary btn-sm" onClick="setCommand('italic')">
             <span class="material-icons">format_italic</span>
         </button>
+    </div>
+    <div class="col">
+
+        <div class="dropdown">
+            <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+                <span class="material-icons text-danger">format_color_text</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <button type="button" class="btn btn-sm btn-light text-danger" onClick="setFontColor('#FF0000')">가</button>
+                    <button type="button" class="btn btn-sm btn-light text-primary" onClick="setFontColor('#0000FF')">가</button>
+                    <button type="button" class="btn btn-sm btn-light text-dark" onClick="setFontColor('#000000')">가</button>
+                </li>
+                
+            </ul>
+        </div>
     </div>
 </div>
 <div class="row">
