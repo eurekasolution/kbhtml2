@@ -9,7 +9,7 @@
 <html lang="ko"> 
 	<head> 
 		<meta charset="UTF-8"> 
- 		<title>국민은행</title> 
+ 		<title>💋국민은행</title> 
  		<meta name="viewport" 
  			content="width=device-width, maximum-scale=3.0, user-scalable=yes"> 
 		<link rel="icon" type="image/png" href="./data/img/kb32.png" sizes="32x32">
@@ -107,7 +107,8 @@
 						<li><a class="dropdown-item" href="main.php?cmd=34array">Array </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=35chart">Google Chart </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=36event">Event </a></li>					
-						<li><a class="dropdown-item" href="main.php?cmd=37editor">WYSIWYG </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=37editor">WYSIWYG </a></li>						
+						<li><a class="dropdown-item" href="main.php?cmd=39shopping">Shopping </a></li>				
 					
 					</ul>
 				</li>
