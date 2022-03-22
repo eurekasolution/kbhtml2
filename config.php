@@ -10,4 +10,5 @@
     $levelList[9] = "관리자";
 
     $adminLevel = 9;
+    $kakaoKey = "3729ce229d39793913c55b005093ba48";
 ?>
