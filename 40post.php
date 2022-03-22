@@ -42,8 +42,8 @@
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 //5자리 새우편번호 사용
 
-                document.getElementById('zipcode').value = data.zonecode;
-                document.getElementById('road').value = fullAddr; //addr1에 확정된 주소값의 풀네임이 들어간다.
+                document.querySelector('#zipcode').value = data.zonecode;
+                document.querySelector('#road').value = fullAddr; //addr1에 확정된 주소값의 풀네임이 들어간다.
 
                 // 커서를 상세주소 필드로 이동한다.
                 // 커서를 이동시켜서 깜빡이게끔 한다.
@@ -62,7 +62,7 @@
                 };    
 
 
-                var thisAddr = document.getElementById('road').value;
+                var thisAddr = document.querySelector('#road').value;
                 geocoder.addressSearch(thisAddr, callback);
 
 
@@ -108,6 +108,8 @@
 </div>
 
 <div class="row">
-    <div class="col"></div>
-    <div class="col"></div>
+    <div class="col">Hidden</div>
+    <div class="col"> 
+        <input type="hidden" id="test" class="form-control">
+    </div>
 </div>
