@@ -1,0 +1,61 @@
+
+
+<div class="row">
+    <div class="col colLine">
+        <p>P 1</p>
+        <p class="bg-light">P 2</p>
+        <p>P 3</p>
+        <p class="bg-light">P 4</p>
+        <p>P 5</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col colLine">
+        <button type="button" class="btn btn-primary" onClick="hideInfo()">Hide</button>
+        <button type="button" class="btn btn-primary" onClick="showInfo()">Show</button>
+        <button type="button" class="btn btn-primary" onClick="moveDiv()">moveDiv</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col colLine">
+        <div id="moveDiv" class="bg-danger" style="position:absolute;">moveDIV</div>
+    </div>
+</div>
+
+
+<script>
+    function moveDiv()
+    {
+        
+        $("#moveDiv").animate({left: '250px'});
+    }
+
+    function hideInfo()
+    {
+        /*
+        let pArray = document.querySelectorAll("p");
+        console.log("p len = " + pArray.length);
+        for(let i = 0; i< pArray.length; i++)
+        {
+            pArray[i].style.display = 'none';
+        }
+        */
+
+        $("p").hide();
+    }
+
+    function showInfo()
+    {
+        $("p").show();
+    }
+
+    function doJquery()
+    {
+        $("p").click(function(){
+            $(this).hide();
+        });
+    }
+
+    doJquery();
+</script>

@@ -23,7 +23,13 @@
  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
 
 		 <script src="js/kbstar.js"></script>
-
+		<script>
+			$(document).ready(function(){
+				$("p").click(function(){
+					//$(this).hide();
+				});
+			});
+		</script>
 
 	</head> 
 <body >
@@ -93,6 +99,32 @@
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">JavaScript</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="main.php?cmd=23js">Javascript</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=24js">Variable</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=25if">If </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=26calculator">Calculator </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=27if">If 2 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=28for">For </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=29function">Function </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=30es6">ES6 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=31event">Event </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=32object">Object </a></li>
+											
+						<li><a class="dropdown-item" href="main.php?cmd=33constructor">Constructor </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=34array">Array </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=35chart">Google Chart </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=36event">Event </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=37editor">WYSIWYG </a></li>						
+						<li><a class="dropdown-item" href="main.php?cmd=39shopping">Shopping </a></li>				
+						<li><a class="dropdown-item" href="main.php?cmd=40post">우편번호 </a></li>
+										
+						<li><a class="dropdown-item" href="main.php?cmd=41browser">브라우저 </a></li>						
+					
+					</ul>
+				</li>
+				<li class="nav-item dropdown ms-4">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">jQuery</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="main.php?cmd=43jquery">jQuery Basic</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=24js">Variable</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=25if">If </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=26calculator">Calculator </a></li>
