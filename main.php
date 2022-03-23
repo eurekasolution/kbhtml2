@@ -109,7 +109,9 @@
 						<li><a class="dropdown-item" href="main.php?cmd=36event">Event </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=37editor">WYSIWYG </a></li>						
 						<li><a class="dropdown-item" href="main.php?cmd=39shopping">Shopping </a></li>				
-						<li><a class="dropdown-item" href="main.php?cmd=40post">우편번호 </a></li>				
+						<li><a class="dropdown-item" href="main.php?cmd=40post">우편번호 </a></li>
+										
+						<li><a class="dropdown-item" href="main.php?cmd=41browser">브라우저 </a></li>						
 					
 					</ul>
 				</li>
