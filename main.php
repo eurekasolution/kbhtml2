@@ -134,7 +134,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=49crawling">Crawling </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=50db">Database </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=51search">search </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=30es6">ES6 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=53join">JOIN </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=31event">Event </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=32object">Object </a></li>
 											
