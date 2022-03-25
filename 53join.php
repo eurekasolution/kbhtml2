@@ -60,3 +60,37 @@
 
 </form>
 
+<!-- 
+    순서    아이디  이름    비번    비고
+-->
+
+<div class="row">
+    <div class="col colLine">순서</div>
+    <div class="col colLine">아이디</div>
+    <div class="col colLine">이름</div>
+    <div class="col-6 colLine">비번</div>
+    <div class="col colLine">비고</div>
+</div>
+
+<?php
+    $sql = "SELECT * FROM members ORDER BY name ASC";
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_array($result);
+
+    while($data)
+    {
+        // 출력
+        ?>
+        <div class="row">
+            <div class="col colLine"><?php echo $data["idx"] ?></div>
+            <div class="col colLine"><?php echo $data["id"] ?></div>
+            <div class="col colLine"><?php echo $data["name"] ?></div>
+            <div class="col-6 colLine"><?php echo $data["pass"] ?></div>
+            <div class="col colLine">
+                <button type="button" class="btn btn-primary btn-sm">보기</button>
+            </div>
+        </div>
+        <?php
+        $data = mysqli_fetch_array($result);
+    }
+?>
