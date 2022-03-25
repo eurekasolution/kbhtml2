@@ -7,9 +7,14 @@ create table members (
     name char(20),
     pass  char(50),
     level  int(3) default '1',
+    age   int(3) default '10',
 
     primary key(idx)
 );
+
+alter table members add age int(3) default '10';
+
+
 
 insert into members (id, name, pass, level) 
     values 
