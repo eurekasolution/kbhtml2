@@ -7,19 +7,22 @@
 
 	include "config.php";
     */
-    if(isset($_POST["id"])  and $_POST["id"] =="test" )
+
+    $id = $_POST["id"];
+    $pass = $_POST["pass"];
+
+    $sql = "SELECT * FROM members 
+                WHERE id='$id' and pass=password('$pass')";
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_array($result);
+
+    if($data)
     {
-        $_SESSION[$sessName] = "홍길동";
-        $_SESSION[$sessId] = "test";
-        $_SESSION[$sessLevel] = 1;
-        $msg = "$sessName 반갑습니다.";
-    } else if(isset($_POST["id"])  and $_POST["id"] =="admin" )
-    {
-        $_SESSION[$sessName] = "관리자";
-        $_SESSION[$sessId] = "admin";
-        $_SESSION[$sessLevel] = 9;
-        $msg = "$sessName 반갑습니다.";
-    } else
+        $_SESSION[$sessName] = $data["name"];
+        $_SESSION[$sessId] = $data["id"];
+        $_SESSION[$sessLevel] = $data["level"];
+        $msg = "$_SESSION[$sessName] 반갑습니다.";
+    }else
     {
         $msg = "아이디와 비번을 확인하세요";
     }
