@@ -1,0 +1,26 @@
+
+1. 데이터베이스 -> 테이블
+
+
+create table kbstar (
+    idx int(10) auto_increment,
+    id  char(20) unique,
+    name char(20),
+    age  int(3) default '10',
+    primary key(idx)
+);
+
+insert into kbstar (id, name, age) values('test', '테스트', '12');
+insert into kbstar (id, name, age) values('admin', '관리자', '32');
+insert into kbstar (id, name, age) values('sslee', '이순신', '42');
+
+insert into kbstar (id, name, age) values('kim','김길동','30');
+insert into kbstar (id, name, age) values('dsfdas','김개똥','23');
+insert into kbstar (id, name, age) values('e4r9df','이순신','12');
+insert into kbstar (id, name, age) values('49ef022','이승만','13');
+insert into kbstar (id, name, age) values('df02','윤보선','53');
+insert into kbstar (id, name, age) values('e902','박정희','21');
+insert into kbstar (id, name, age) values('2dfkdf','전두환','53');
+insert into kbstar (id, name, age) values('dfkdasf','노태우','21');
+insert into kbstar (id, name, age) values('users','김영삼','43');
+insert into kbstar (id, name, age) values('kbstet','김대중','21');

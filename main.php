@@ -4,6 +4,9 @@
 	session_start();
 
 	include "config.php";
+	include "db.php";
+
+	$conn = connectDB();
 ?>
 <!doctype html> 
 <html lang="ko"> 
@@ -125,12 +128,12 @@
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">jQuery</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="main.php?cmd=43jquery">jQuery Basic</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=24js">Variable</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=25if">If </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=26calculator">Calculator </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=27if">If 2 </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=28for">For </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=29function">Function </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=44ajax">Why Ajax</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=46search">Ajax Search </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=48method">jQuery Method </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=49crawling">Crawling </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=50db">Database </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=51search">search </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=30es6">ES6 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=31event">Event </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=32object">Object </a></li>

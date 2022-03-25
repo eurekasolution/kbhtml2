@@ -23,6 +23,47 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col colLine">
+        
+        <table class="table">
+            <tr>
+               <td>1</td>
+               <td class="aaa">2</td>
+               <td>3</td> 
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td> 
+             </tr>
+             <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td> 
+             </tr>
+        </table>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <ul>
+            <li>item 1</li>
+            <li>item 2
+                <ul>
+                    <li>item a</li>
+                    <li>item b</li>
+                </ul>
+            </li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+        </ul>
+    </div>
+</div>
+
 
 <script>
     function moveDiv()
@@ -55,6 +96,42 @@
         $("p").click(function(){
             $(this).hide();
         });
+
+        //$("td").css("border", "1px solid #FF0000");
+        // :filter
+        //$("td:odd").css("background", "#FF0000");
+        //$("tr > .aaa").css("background", "#FFFF00");
+        // table 자손중에 aaa
+        //$("tr  .aaa").css("background", "#FF00FF");
+
+        //$("table:last-child").css("background", "#000000");
+
+        $("td").eq(2).css("background", "#FFFF00");
+
+        // $("td:eq(0)").css("background", "#000000");
+        // $("td").eq(0).css("background", "#000000");
+                // eq(0), first(), last()
+        $("td").last().css("background", "#FF0000");
+        // aaa 클래스 아닌 녀석을 찾아서 전부 녹색배경
+        $("td").not(".aaa").css("background", "#00FF00");
+
+        $("td").filter(function(index){
+            console.log("traverse " + index); 
+            return index % 3 == 0 || index % 3 == 2;
+        } ).css("background", "#0000FF");
+
+        $("td").not(function(index){
+            return index % 2 == 1;
+        }).css("background", "#FF0000");
+
+        $("li").has("ul").css("background", "#ABCDEF");
+
+        $("*").each(function(){
+            if($(this).is("li")) {
+                $(this).css("border", "3px dotted #FF0000");
+            }   
+        })
+
     }
 
     doJquery();

@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col colLine">
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5 </li>
+        </ul>
+
+        <p>i am p tag</p>
+    </div>
+</div>
+
+<script>
+
+    function doAct()
+    {
+        //$("li").add("div > p").css("background", "#FFFF00");
+        $("div").find("p").addClass("text-danger");
+        // document.querySelector("#myid").className = "";
+    }
+
+    doAct();
+</script>
