@@ -23,6 +23,7 @@
 <?php
     $sql = "select * from kbstar"; // Query 
     $result = mysqli_query($conn, $sql);
+    echo "sql = $sql<br>";
     $data = mysqli_fetch_array($result);
 
     while($data)
