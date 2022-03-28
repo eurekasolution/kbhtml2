@@ -13,11 +13,14 @@
         $pass = $_POST["pass"];
     if(isset($_POST["mode"]))
         $mode = $_POST["mode"];
+    if(isset($_POST["age"]))
+        $mode = $_POST["age"];
 
     if(isset($mode ) and $mode == "join")
     {
-        $sql = "INSERT INTO members (id, name, pass, level) 
-                    VALUES ('$id', '$name', password('$pass'), '1') ";
+        //$age = 77;
+        $sql = "INSERT INTO members (id, name, pass, level, age) 
+                    VALUES ('$id', '$name', password('$pass'), '1' , '$age') ";
         $result = mysqli_query($conn, $sql);
         $affectedCount = mysqli_affected_rows($conn);
         if($affectedCount ==1)
@@ -25,16 +28,32 @@
         else
             $msg = "가입 실패";
 
-        echo "
+        echo " $sql
         <script>
             alert('$msg');
-            location.href='main.php?cmd=53join';
+            //location.href='main.php?cmd=53join';
         </script>
         ";  
     }
 
-    
 ?>
+<script>
+    function getUserInfo(pidx)
+    {
+        let result = document.querySelector("#result");
+        let param = "idx="+pidx;
+        $.ajax({
+            url: "54ajaxUserInfo.php",
+            data:param,
+            type:"POST",
+            cache:false,
+            success:function(rcvData){
+                $("#result").html(rcvData);
+            }
+        });
+    }
+</script>
+
 
 <form method="post" action="main.php?cmd=53join">
 <input type="hidden" name="mode" value="join">    
@@ -47,6 +66,9 @@
     </div>
     <div class="col">
         <input type="text" class="form-control" name="name" placeholder="실명입력">
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" name="age" placeholder="나이입력">
     </div>
     <div class="col">
         <button type="submit" class="btn btn-primary">가입</button>
@@ -68,6 +90,7 @@
     <div class="col colLine">순서</div>
     <div class="col colLine">아이디</div>
     <div class="col colLine">이름</div>
+    <div class="col colLine">나이</div>
     <div class="col-6 colLine">비번</div>
     <div class="col colLine">비고</div>
 </div>
@@ -85,9 +108,10 @@
             <div class="col colLine"><?php echo $data["idx"] ?></div>
             <div class="col colLine"><?php echo $data["id"] ?></div>
             <div class="col colLine"><?php echo $data["name"] ?></div>
+            <div class="col colLine"><?php echo $data["age"] ?></div>
             <div class="col-6 colLine"><?php echo $data["pass"] ?></div>
             <div class="col colLine">
-                <button type="button" class="btn btn-primary btn-sm">보기</button>
+                <button type="button" class="btn btn-primary btn-sm" onClick=getUserInfo(<?php echo $data["idx"] ?>)>보기</button>
             </div>
         </div>
         <?php
