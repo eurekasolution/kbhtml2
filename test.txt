@@ -1,0 +1,42 @@
+main()
+{
+    if(관리자)
+    {
+        doAdmin();
+    }else
+    {
+        if( 가입자)
+        {
+            doMember();
+        }else
+        {
+            doJoin();
+        }
+    }
+}
+
+void doMember()
+{
+
+}
+
+void doJoin()
+{
+
+}
+void doAdmin()
+{
+    if(지점직원)
+    {
+        if(장구직원)
+        {
+            front();
+        }else
+        {
+            branchManager();
+        }
+    }else
+    {
+
+    }
+}
