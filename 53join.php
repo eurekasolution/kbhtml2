@@ -41,11 +41,18 @@
     function getUserInfo(pidx)
     {
         let result = document.querySelector("#result");
-        let param = "idx="+pidx;
+        //let param = "idx="+pidx;
+        // JSON : JavaScript Object Notation
+        //          Dictionary Type
+        let jsonData = {
+            "idx":pidx , 
+            "test":"Hello"
+        };
         $.ajax({
             url: "54ajaxUserInfo.php",
-            data:param,
+            data: jsonData,
             type:"POST",
+            //dataType: "json",
             cache:false,
             success:function(rcvData){
                 $("#result").html(rcvData);
