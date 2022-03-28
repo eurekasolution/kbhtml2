@@ -14,7 +14,7 @@
 
     ?>
 
-    <ul class="list-unstyled preview_ul bg-warning">
+    <ul class="list-unstyled preview_ul bg-warning border border-3 border-danger rounded">
     <?php
         while($data)
         {

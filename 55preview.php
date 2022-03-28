@@ -55,8 +55,12 @@
             }
         });
 
-        $(".preview_li").on("click", function(e){
-            
+        $(document).on("click", ".preview_li", function(e){
+            //alert('click');
+            let selectedKeyword = $(this).text();
+            //alert('x = ' + x);
+            $("#keyword").val(selectedKeyword);
+            $("#keylist").fadeOut("fast");
         });
 
 
