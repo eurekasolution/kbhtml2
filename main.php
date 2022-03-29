@@ -138,7 +138,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=55preview">검색 미리보기 </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=57table">테이블 </a></li>
 											
-						<li><a class="dropdown-item" href="main.php?cmd=33constructor">Constructor </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=58map">카카오맵 </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=34array">Array </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=35chart">Google Chart </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=36event">Event </a></li>					
