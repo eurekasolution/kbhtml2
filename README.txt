@@ -1,3 +1,50 @@
+1. DATABASE 접속..
+
+   mysql -u 사용자명 데이터베이스명 -p
+
+   mysql -u mykb mykb -p 
+
+
+2. 공통명령
+
+    show databases;
+    use mykb;
+    show tables;
+
+3. tables
+
+    create table my_test (
+        idx     int(10) auto_increment,
+        name    varchar(20) default 'noname',
+        id      varchar(20) UNIQUE,
+        age     int(3) default '10',
+        birth   date,  -- comment
+        memo    blob,
+        regist  datetime ,
+
+        primary key(idx) 
+    );
+
+    테이블의 구조 확인 (describe)
+
+    show tables;
+
+    desc my_table;
+
+    명령이 딱 4개.. (삽입, 갱신, 검색, 삭제)
+                    insert, update, search, delete
+
+    1. 삽입  name,id,  
+
+    INSERT INTO 테이블명 ( 필드나열순서무관 ) VALUES (  값들을순서에맞게나열)
+
+    insert into my_test (id, birth, regist) values ('test', '2000-01-03', now());
+
+
+
+
+
+
 
 http://naver.me/FwkKZweA
 
