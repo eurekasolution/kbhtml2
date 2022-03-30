@@ -111,6 +111,17 @@ Fake Data : http://naver.me/5okJP3J4
     DELETE FROM 테이블명 [ where 조건 ];
 
 
+create table birth_table (
+        idx     int(10) auto_increment,
+        name	char(20),
+        birth	date, -- input type="date"
+        city		char(20),
+        primary key(idx)	
+);
+
+
+
+
 http://naver.me/FwkKZweA
 
 

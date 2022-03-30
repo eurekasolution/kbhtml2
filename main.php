@@ -144,7 +144,7 @@
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Database</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="main.php?cmd=58insert">Insert</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=44ajax">Why Ajax</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=59birth">Birth</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=46search">Ajax Search </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=48method">jQuery Method </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=49crawling">Crawling </a></li>
