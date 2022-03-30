@@ -36,7 +36,7 @@ Fake Data : http://naver.me/5okJP3J4
     명령이 딱 4개.. (삽입, 갱신, 검색, 삭제)
                     insert, update, search, delete
 
-    1. 삽입  name,id,  
+    1. 삽입  
 
     INSERT INTO 테이블명 ( 필드나열순서무관 ) VALUES (  값들을순서에맞게나열)
 
@@ -45,8 +45,65 @@ Fake Data : http://naver.me/5okJP3J4
         values ('홍길동', 'kdhong', '33', '1999-12-31', '메모 테스트', now());
 
 
+    2. 검색(SELECT)
+
+    SELECT 필드들의나열 FROM 테이블명 
+                [ WHERE 조건 ]
+                [ ORDER BY 필드 증감조건]
+                [ LIMIT [시작인덱스,] 갯수]
+
+    SELECT * FROM 테이블명;
+
+    SELECT * FROM my_test;
+    SELECT name, age from my_test;
+    SELECT * FROM kb_customer where job='자영업';
+    SELECT * FROM kb_customer where local='서울' and birth>='2000-01-01' ;
+
+    SELECT count(*) FROM kb_customer where gender='1';
+    SELECT count(*)  as mynick FROM kb_customer where gender='1';
+
+    select * from kb_customer where name like '김%' ;
+    select * from kb_customer where name like '김%' order by local asc ;
+    select * from kb_customer where name like '김%' order by local asc, name desc ;
+    select * from kb_customer ;
+    select * from kb_customer limit 10;
+    select * from kb_customer limit 5, 3;
 
 
+    1. 남자이면서 장애인인 김씨를 모두 검색
+    2. 여성이면서, 2000년 이후 출생자, 전문인력은 모두 몇명인가
+    3. 서울에 사는 김씨는 모두 몇명인가?
+    4. 서울에 사는 장애인중 2번째로 나이가 많은 사람은 누구인가? 12935
+
+    // dept
+
+    create table dept (
+        idx     int(10) auto_increment,    
+        name    char(20),
+        major   char(20),
+        age     int(3) default '20',
+        primary key(idx)
+    );
+
+
+    insert into dept (name, major, age) values('홍길동', '컴퓨터', '21');
+
+
+    select major from dept;
+
+    select dept.major from dept;
+
+    select distinct major from dept order by major asc;
+
+    select sum(age) from dept;
+    select avg(age) from dept;
+
+    3. 갱신 (Update)
+
+    UPDATE 테이블명 SET 필드1='새값1', 필드2='새값2' [ WHERE 조건 ];
+
+    update dept set age='23' where idx<10; 
+    update dept set age=age+1 where idx>0;
 
 
 http://naver.me/FwkKZweA
