@@ -1,3 +1,5 @@
+Fake Data : http://naver.me/5okJP3J4
+
 1. DATABASE 접속..
 
    mysql -u 사용자명 데이터베이스명 -p
@@ -39,7 +41,8 @@
     INSERT INTO 테이블명 ( 필드나열순서무관 ) VALUES (  값들을순서에맞게나열)
 
     insert into my_test (id, birth, regist) values ('test', '2000-01-03', now());
-
+    insert into my_test (name, id, age, birth, memo, regist) 
+        values ('홍길동', 'kdhong', '33', '1999-12-31', '메모 테스트', now());
 
 
 
