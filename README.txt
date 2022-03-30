@@ -106,6 +106,11 @@ Fake Data : http://naver.me/5okJP3J4
     update dept set age=age+1 where idx>0;
 
 
+    4. 삭제 (Delete)
+
+    DELETE FROM 테이블명 [ where 조건 ];
+
+
 http://naver.me/FwkKZweA
 
 

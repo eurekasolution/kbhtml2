@@ -16,6 +16,31 @@
     if(isset($_POST["mode"]))
         $mode = $_POST["mode"];
 
+    if(isset($_GET["mode"]))
+        $mode = $_GET["mode"];
+    if(isset($_GET["idx"]))
+        $idx = $_GET["idx"];
+
+    if(isset($mode ) and $mode == "delete")
+    {
+        // delete from table where .
+        $sql = "DELETE FROM dept
+                    WHERE idx='$idx' ";
+        $result = mysqli_query($conn, $sql);
+        $affectedCount = mysqli_affected_rows($conn);
+        if($affectedCount ==1)
+            $msg = "삭제 성공";
+        else
+            $msg = "삭제 실패";
+
+        echo " $sql
+        <script>
+            alert('$msg');
+            location.href='main.php?cmd=58insert';
+        </script>
+        ";  
+    }
+
     if(isset($mode ) and $mode == "update")
     {
         // update dept set a=b, c=d, ... where idx=..
@@ -87,6 +112,13 @@
     순서    아이디  이름    비번    비고
 -->
 
+<script>
+    function confirmDelete(pidx)
+    {
+        location.href='main.php?cmd=58insert&mode=delete&idx='+pidx;
+    }
+</script>
+
 <div class="row">
     <div class="col colLine">순서</div>
     <div class="col colLine">이름</div>
@@ -115,6 +147,8 @@
             <div class="col colLine">
                 <button type="submit" class="btn btn-danger btn-sm">수정</button>
             
+                <button type="button" class="btn btn-danger btn-sm" onClick=confirmDelete(<?php echo $data["idx"] ?>)>삭제</button>
+
                 <button type="button" class="btn btn-primary btn-sm" onClick=getUserInfo(<?php echo $data["idx"] ?>)>보기</button>
             </div>
         </div>
