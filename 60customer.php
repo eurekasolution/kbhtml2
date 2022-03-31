@@ -37,6 +37,9 @@
     if(isset($_GET["idx"]))
         $idx = $_GET["idx"];
 
+    if(isset($_GET["page"]))
+        $page = $_GET["page"];
+
     if(isset($mode ) and $mode == "delete")
     {
         // delete from table where .
@@ -75,7 +78,7 @@
         echo " $sql
         <script>
             alert('$msg');
-            location.href='main.php?cmd=$cmd';
+            location.href='main.php?cmd=$cmd&page=$page';
         </script>
         ";  
     }
@@ -265,7 +268,7 @@
     {
         // 출력
         ?>
-        <form method="post" action="main.php?cmd=<?php echo $cmd?>">
+        <form method="post" action="main.php?cmd=<?php echo $cmd?>&page=<?php echo $page?>">
         <input type="hidden" name="mode" value="update">
         <input type="hidden" name="idx" value="<?php echo $data["idx"] ?>">
         <div class="row">
