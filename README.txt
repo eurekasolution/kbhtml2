@@ -123,6 +123,27 @@ drop table 테이블명;
 
 
 
+SELECT 옵션 : WHERE, ORDER BY, LIMIT
+
+    GROUP BY, Having
+
+    SELECT major, count(*) as total FROM dept  
+        GROUP BY major 
+        HAVING  total >=2 ORDER BY total DESC;
+
+    SELECT major, count(*) as total FROM dept  
+        GROUP BY major 
+        HAVING  total >=2 ORDER BY major DESC;
+
+    SELECT major, count(*) as total , avg(age) as avgage  FROM dept  
+        GROUP BY major 
+        HAVING  total >=2 ORDER BY major DESC;
+
+    Q: kb_customer 에서 통계를 내려고 한다.
+        지역별 인원분포, 지역 평균 나이를 효과적으로 시각화하시오.
+        63statistics.php 
+
+
 http://naver.me/FwkKZweA
 
 

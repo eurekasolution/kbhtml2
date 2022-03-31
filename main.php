@@ -147,7 +147,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=59birth">Birth</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=60customer">고객관리 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=61pi">Pi Chart </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=49crawling">Crawling </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=62donut">Donut Chart </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=50db">Database </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=51search">search </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=53join">JOIN </a></li>
