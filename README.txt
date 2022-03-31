@@ -144,6 +144,10 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
         63statistics.php 
 
 
+    SELECT  avg(left(now(),4) -  left(birth, 4)) as age from kb_customer
+
+
+
 http://naver.me/FwkKZweA
 
 
