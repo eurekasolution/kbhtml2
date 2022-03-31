@@ -213,6 +213,48 @@
     ?>
     <div class="row">
         <div class="col colLine text-center">
+            <ul class="pagination">
+                
+                <?php
+
+                    // 맨 앞으로기능..
+                    if($group >=3)
+                    {
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=1'><span class='material-icons'>first_page</span></a></li>";
+                    }
+
+                    // 이전그룹가기
+                    // 
+                    if($group >=2)
+                    {
+                        $prevPage = ($group -2 )* $PPG +1;
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$prevPage'><span class='material-icons'>chevron_left</span></a></li>";
+                    }
+                    // 11, 12, 13, 14, 15 (group -2) * 5 + 1
+
+
+                    for($i = ($group-1) *$PPG  +1; $i <= $group * $PPG ; $i++  )
+                    {
+                        if($i<=$totalPage)
+                        {
+                            if($i == $page)
+                                $activeMark = "active";
+                            else
+                                $activeMark = "";
+                            echo "<li class='page-item $activeMark'><a class='page-link' href='main.php?cmd=$cmd&page=$i'>$i</a></li> ";
+                        }else{
+                            break;
+                        }
+                    }
+                ?>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col colLine text-center">
         <?php
             // 1Group
             // 1 2 3 4 5 >  >>
@@ -229,9 +271,9 @@
             for($i=1; $i<=$totalPage; $i++)
             {
                 if($i == $page)
-                    echo "<a href='main.php?cmd=58insert&page=$i'><span class='badge bg-danger'>$i</span></a> ";
+                    echo "<a href='main.php?cmd=$cmd&page=$i'><span class='badge bg-danger'>$i</span></a> ";
                 else
-                    echo "<a href='main.php?cmd=58insert&page=$i'><span class='badge bg-secondary'>$i</span></a> ";
+                    echo "<a href='main.php?cmd=$cmd&page=$i'><span class='badge bg-secondary'>$i</span></a> ";
             }
         ?>
         </div>
