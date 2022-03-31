@@ -7,6 +7,8 @@
 <?php
     if(isset($_POST["keyword"]))
         $keyword = $_POST["keyword"];
+    else if(isset($_GET["keyword"]))
+        $keyword = $_GET["keyword"];
     else
         $keyword = "";
 
@@ -297,7 +299,7 @@
                     // 맨 앞으로기능..
                     if($group >=3)
                     {
-                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=1'><span class='material-icons icon'>first_page</span></a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=1&keyword=$keyword'><span class='material-icons icon'>first_page</span></a></li>";
                     }
 
                     // 이전그룹가기
@@ -305,7 +307,7 @@
                     if($group >=2)
                     {
                         $prevPage = ($group -2 )* $PPG +1;
-                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$prevPage'><span class='material-icons icon'>chevron_left</span></a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$prevPage&keyword=$keyword'><span class='material-icons icon'>chevron_left</span></a></li>";
                     }
                     // 11, 12, 13, 14, 15 (group -2) * 5 + 1
 
@@ -318,7 +320,7 @@
                                 $activeMark = "active";
                             else
                                 $activeMark = "";
-                            echo "<li class='page-item $activeMark'><a class='page-link' href='main.php?cmd=$cmd&page=$i'>$i</a></li> ";
+                            echo "<li class='page-item $activeMark'><a class='page-link' href='main.php?cmd=$cmd&page=$i&keyword=$keyword'>$i</a></li> ";
                         }else{
                             break;
                         }
@@ -328,7 +330,7 @@
                     if($group < $totalGroup)
                     {
                         $nextPage = ($group )* $PPG +1;
-                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$nextPage'><span class='material-icons icon'>chevron_right</span></a></li>";   
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$nextPage&keyword=$keyword'><span class='material-icons icon'>chevron_right</span></a></li>";   
                     }
 
                     // 맨 마지막으로 가기
@@ -336,7 +338,7 @@
                     if($group < $totalGroup -1)
                     {
                         $lastGroupPage = ($totalGroup -1) * $PPG +1;
-                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$lastGroupPage'><span class='material-icons icon'>last_page</span></a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$lastGroupPage&keyword=$keyword'><span class='material-icons icon'>last_page</span></a></li>";
                     }
 
                 ?>
