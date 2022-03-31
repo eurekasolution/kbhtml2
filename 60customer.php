@@ -5,6 +5,11 @@
 </div>
 
 <?php
+    if(isset($_POST["keyword"]))
+        $keyword = $_POST["keyword"];
+    else
+        $keyword = "";
+
     if(isset($_POST["gender"]))
         $gender = $_POST["gender"];
     if(isset($_POST["name"]))
@@ -33,7 +38,7 @@
     if(isset($mode ) and $mode == "delete")
     {
         // delete from table where .
-        $sql = "DELETE FROM dept
+        $sql = "DELETE FROM kb_customer
                     WHERE idx='$idx' ";
         $result = mysqli_query($conn, $sql);
         $affectedCount = mysqli_affected_rows($conn);
@@ -45,7 +50,7 @@
         echo " $sql
         <script>
             alert('$msg');
-            location.href='main.php?cmd=58insert';
+            location.href='main.php?cmd=$cmd';
         </script>
         ";  
     }
@@ -53,8 +58,10 @@
     if(isset($mode ) and $mode == "update")
     {
         // update dept set a=b, c=d, ... where idx=..
-        $sql = "UPDATE dept SET 
-                    name='$name', major='$major', age='$age'
+        $sql = "UPDATE kb_customer SET 
+                    name='$name', gender='$gender',
+                    birth='$birth', job='$job', 
+                    disabled='$disabled', local='$local'
                     WHERE idx='$idx' ";
         $result = mysqli_query($conn, $sql);
         $affectedCount = mysqli_affected_rows($conn);
@@ -66,7 +73,7 @@
         echo " $sql
         <script>
             alert('$msg');
-            location.href='main.php?cmd=58insert';
+            location.href='main.php?cmd=$cmd';
         </script>
         ";  
     }
@@ -150,6 +157,21 @@
 
 </form>
 
+<form method="post" action="main.php?cmd=<?php echo $cmd?>">
+<div class="row">
+    <div class="col-2">
+        검색어
+    </div>
+    <div class="col">
+        <input type="text" name="keyword" value="<?php echo $keyword?>" class="form-control" placeholder="검색어">
+    </div>
+    <div class="col-2">
+        <button type="submit" class="btn btn-primary">검색</button>
+    </div>
+</div>
+</form>
+
+
 <!-- 
     순서    아이디  이름    비번    비고
 -->
@@ -159,7 +181,7 @@
     {
         if(confirm('삭제된 데이터는 복구할 수 없습니다.\n정말 삭제하시겠습니까?'))
         {
-            location.href='main.php?cmd=58insert&mode=delete&idx='+pidx;
+            location.href='main.php?cmd=<?php echo $cmd?>&mode=delete&idx='+pidx;
         }
         
     }
@@ -177,7 +199,14 @@
 </div>
 
 <?php
-    $sql = "SELECT count(*) as total  FROM kb_customer ORDER BY name ASC";
+    if($keyword)
+    {
+        $sql = "SELECT count(*) as total  FROM kb_customer WHERE name like '%$keyword%' ";
+    }else
+    {
+        $sql = "SELECT count(*) as total  FROM kb_customer ";
+    }
+        
     $result = mysqli_query($conn, $sql);
     $data = mysqli_fetch_array($result);
 
@@ -219,8 +248,14 @@
 
     $start = ($page -1) * $LPP;
 
-
-    $sql = "SELECT * FROM kb_customer ORDER BY name ASC LIMIT $start, $LPP";
+    if($keyword)
+    {
+        $sql = "SELECT * FROM kb_customer WHERE name like '%$keyword%' ORDER BY name ASC LIMIT $start, $LPP";
+    }else
+    {
+        $sql = "SELECT * FROM kb_customer ORDER BY name ASC LIMIT $start, $LPP";
+    }
+    
     $result = mysqli_query($conn, $sql);
     $data = mysqli_fetch_array($result);
 
@@ -228,7 +263,7 @@
     {
         // 출력
         ?>
-        <form method="post" action="main.php?cmd=58insert">
+        <form method="post" action="main.php?cmd=<?php echo $cmd?>">
         <input type="hidden" name="mode" value="update">
         <input type="hidden" name="idx" value="<?php echo $data["idx"] ?>">
         <div class="row">
