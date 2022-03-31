@@ -5,12 +5,21 @@
 </div>
 
 <?php
-    if(isset($_POST["major"]))
-        $major = $_POST["major"];
+    if(isset($_POST["gender"]))
+        $gender = $_POST["gender"];
     if(isset($_POST["name"]))
         $name = $_POST["name"];
-    if(isset($_POST["age"]))
-        $age = $_POST["age"];
+    if(isset($_POST["birth"]))
+        $birth = $_POST["birth"];
+    if(isset($_POST["job"]))
+        $job = $_POST["job"];
+    if(isset($_POST["disabled"]))
+        $disabled = $_POST["disabled"];
+    if(isset($_POST["local"]))
+        $local = $_POST["local"];
+         
+
+
     if(isset($_POST["idx"]))
         $idx = $_POST["idx"];
     if(isset($_POST["mode"]))
@@ -65,8 +74,10 @@
     if(isset($mode ) and $mode == "insert")
     {
         //$age = 77;
-        $sql = "INSERT INTO dept (name, major, age) 
-                    VALUES ('$name', '$major', '$age') ";
+        $sql = "INSERT INTO kb_customer 
+                    (name, gender, birth, job, disabled, local) 
+                    VALUES 
+                    ('$name', '$gender', '$birth', '$job', '$disabled', '$local') ";
         $result = mysqli_query($conn, $sql);
         $affectedCount = mysqli_affected_rows($conn);
         if($affectedCount ==1)
@@ -77,25 +88,56 @@
         echo " $sql
         <script>
             alert('$msg');
-            location.href='main.php?cmd=58insert';
+            location.href='main.php?cmd=$cmd';
         </script>
         ";  
     }
 
 ?>
 
-<form method="post" action="main.php?cmd=58insert">
+<form method="post" action="main.php?cmd=<?php echo $cmd?>">
 <input type="hidden" name="mode" value="insert">    
 <div class="row">
     <div class="col">
         <input type="text" class="form-control" name="name" placeholder="이름">
     </div>
     <div class="col">
-        <input type="text" class="form-control" name="major" placeholder="학과">
+        <select  class="form-control" name="gender" >
+            <option value='1'>남성</option>
+            <option value='2'>여성</option>
+        </select>
     </div>
     <div class="col">
-        <input type="text" class="form-control" name="age" placeholder="나이">
+        <input type="date" class="form-control" name="birth" placeholder="생년월일">
     </div>
+    <div class="col">
+        <input type="text" class="form-control" name="job" placeholder="직업">
+    </div>
+    <div class="col">
+        <select  class="form-control" name="disabled" >
+            <option value='0'>장애X</option>
+            <option value='1'>장애O</option>
+        </select>
+    </div>
+    <div class="col">
+        <select  class="form-control" name="local" >
+            <option value='서울'>서울</option>
+            <option value='경기'>경기</option>
+            <option value='충남'>충남</option>
+            <option value='충북'>충북</option>
+            <option value='강원'>강원</option>
+            <option value='제주'>제주</option>
+            <option value='전남'>전남</option>
+            <option value='전북'>전북</option>
+            <option value='경남'>경남</option>
+            <option value='경북'>경북</option>
+            <option value='기타'>기타</option>
+
+        </select>
+    </div>
+
+
+
     <div class="col">
         <button type="submit" class="btn btn-primary">등록</button>
     </div>
@@ -140,13 +182,13 @@
     $data = mysqli_fetch_array($result);
 
     $total = $data["total"];
-    echo "total = $total <br>";
+    //echo "total = $total <br>";
     $LPP = 10; // total/ 3   , Line per Page
     $PPG = 5; // page per group
 
 
     $totalPage = ceil($total / $LPP);
-    echo "totalPage = $totalPage <br>";
+    //echo "totalPage = $totalPage <br>";
 
 
     if(isset($_GET["page"]))  // main.php?cmd=58input&page=3
@@ -163,7 +205,7 @@
     //            :   n
     $group = ceil($page / $PPG);
     $totalGroup = ceil($totalPage / $PPG);
-    echo "group = $group , totalGroup = $totalGroup<br>";
+    //echo "group = $group , totalGroup = $totalGroup<br>";
     
 
     
@@ -213,14 +255,14 @@
     ?>
     <div class="row">
         <div class="col colLine text-center">
-            <ul class="pagination">
+            <ul class="pagination justify-content-center">
                 
                 <?php
 
                     // 맨 앞으로기능..
                     if($group >=3)
                     {
-                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=1'><span class='material-icons'>first_page</span></a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=1'><span class='material-icons icon'>first_page</span></a></li>";
                     }
 
                     // 이전그룹가기
@@ -228,7 +270,7 @@
                     if($group >=2)
                     {
                         $prevPage = ($group -2 )* $PPG +1;
-                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$prevPage'><span class='material-icons'>chevron_left</span></a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$prevPage'><span class='material-icons icon'>chevron_left</span></a></li>";
                     }
                     // 11, 12, 13, 14, 15 (group -2) * 5 + 1
 
@@ -246,13 +288,29 @@
                             break;
                         }
                     }
+
+                    // 다음 그룹으로 가기
+                    if($group < $totalGroup)
+                    {
+                        $nextPage = ($group )* $PPG +1;
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$nextPage'><span class='material-icons icon'>chevron_right</span></a></li>";   
+                    }
+
+                    // 맨 마지막으로 가기
+
+                    if($group < $totalGroup -1)
+                    {
+                        $lastGroupPage = ($totalGroup -1) * $PPG +1;
+                        echo "<li class='page-item'><a class='page-link' href='main.php?cmd=$cmd&page=$lastGroupPage'><span class='material-icons icon'>last_page</span></a></li>";
+                    }
+
                 ?>
             </ul>
         </div>
     </div>
 
 
-
+<!--
     <div class="row">
         <div class="col colLine text-center">
         <?php
@@ -278,6 +336,8 @@
         ?>
         </div>
     </div>
+        -->
+
     <?php
 
 ?>
