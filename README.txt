@@ -146,6 +146,31 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
 
     SELECT  avg(left(now(),4) -  left(birth, 4)) as age from kb_customer
 
+    SUB Query : SELECT 속에 SELECT
+
+    SELECT name, major, age from dept 
+        WHERE
+            major in ( SELECT major FROM dept where name='데이터' );
+
+    날짜관련 함수.
+
+    select now();
+    select date_add(now(), interval 10 day);
+
+            // day, month, year, hour, minute, second
+    SELECT DATEDIFF('2000-01-01', '2022-03-31') --  as mydiff;
+    SELECT dayofweek('2022-03-31');
+    SELECT dayofweek('2022-03-01');
+    SELECT dayofyear(now());
+    SELECT week(now());
+
+
+    // ROUND()
+    // ROUND(1.23456, 3)
+    select ceil(1.23);
+    select floor(degree);
+    
+
 
 
 http://naver.me/FwkKZweA
