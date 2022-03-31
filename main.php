@@ -145,7 +145,7 @@
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="main.php?cmd=58insert">Insert</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=59birth">Birth</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=46search">Ajax Search </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=60customer">고객관리 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=48method">jQuery Method </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=49crawling">Crawling </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=50db">Database </a></li>

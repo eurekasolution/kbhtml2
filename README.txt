@@ -119,6 +119,7 @@ create table birth_table (
         primary key(idx)	
 );
 
+drop table 테이블명;
 
 
 
