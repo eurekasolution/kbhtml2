@@ -12,10 +12,16 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['시간', '온도', '습도'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
+          <?php
+            $sql = "select * from iot order by idx asc";
+            $result = mysqli_query($conn, $sql);
+            $data = mysqli_fetch_array($result);
+            while($data)
+            {
+                echo "['$data[time]', $data[temperature], $data[humidity] ],";
+                $data = mysqli_fetch_array($result);
+            }
+          ?>
         ]);
 
         var options = {
@@ -35,3 +41,8 @@
         <div id="curve_chart" style="width: 100%; height: 800px"></div>
     </div>
 </div>
+<script>
+    setTimeout( function(){
+        location.href='main.php?cmd=65graph';
+    }   , 5 * 1000); // UNIT : ms
+</script>

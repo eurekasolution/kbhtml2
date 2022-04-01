@@ -188,8 +188,35 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
     insert into iot (branch, temperature, humidity, time )
             values('1', '12.3', '45.6', now());
 
+    create table bank (
+        idx     int(10) auto_increment,
+        branch  int(3) default '1',
+        temperature float,
+        humidity    float,
+        time        datetime,
+        primary key(idx)
+    );
 
+    //title
+    alter table bank add title char(20) after branch;
+    desc bank;
+    alter table bank change title name char(30);
+    alter table bank drop name;
 
+    alter table bank change temperature floor int(3) default '1';
+    alter table bank change humidity person int(5) default '0';
+
+    create table bank (
+        idx     int(10) auto_increment,
+        branch  int(3) default '1',
+        f1   int(3) default '0',
+        f2   int(3) default '0',
+        f3   int(3) default '0',
+        time        datetime,
+        primary key(idx)
+    );
+
+    cacti
 
 http://naver.me/FwkKZweA
 

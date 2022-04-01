@@ -5,8 +5,8 @@
 </div>
 
 <?php
-    $temperature = rand(200, 300)/ 10;
-    $humidity = rand(500, 700)/ 10;
+    $temperature = rand(250, 260)/ 10;
+    $humidity = rand(650, 660)/ 10;
 
     $sql = "INSERT INTO iot (branch, temperature, humidity, time) 
                     VALUES('1', '$temperature', '$humidity', now() )";
