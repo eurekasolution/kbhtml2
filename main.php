@@ -149,7 +149,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=61pi">Pi Chart </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=62donut">Donut Chart </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=64generator">Generator </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=51search">search </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=65graph">온도/습도 그래프 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=53join">JOIN </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=55preview">검색 미리보기 </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=57table">테이블 </a></li>

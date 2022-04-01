@@ -24,5 +24,5 @@
 <script>
     setTimeout( function(){
         location.href='main.php?cmd=64generator';
-    }   , 5000);
+    }   , 5 * 1000); // UNIT : ms
 </script>
