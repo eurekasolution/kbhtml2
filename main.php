@@ -148,7 +148,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=60customer">고객관리 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=61pi">Pi Chart </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=62donut">Donut Chart </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=50db">Database </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=64generator">Generator </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=51search">search </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=53join">JOIN </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=55preview">검색 미리보기 </a></li>					

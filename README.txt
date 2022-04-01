@@ -171,6 +171,24 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
     select floor(degree);
     
 
+    IoT 시각화
+
+    // idx, branch(id), temperature(float), humidity(float), time
+
+    create table iot (
+        idx     int(10) auto_increment,
+        branch  int(3) default '1',
+        temperature float,
+        humidity    float,
+        time        datetime,
+        primary key(idx)
+    );
+
+    // temp, tmp
+    insert into iot (branch, temperature, humidity, time )
+            values('1', '12.3', '45.6', now());
+
+
 
 
 http://naver.me/FwkKZweA
