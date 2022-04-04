@@ -281,6 +281,19 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
     );
 
 
+View : 가상 테이블명
+
+create or replace view v_customer as
+    select * from kb_customer
+    where name like '김%';
+
+
+ select @@autocommit;
+
+ set autocommit = false;
+ select @@autocommit;
+
+/Application/XAMPP/mysql/bin
 
 
 
