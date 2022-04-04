@@ -175,6 +175,8 @@
 						<li><a class="dropdown-item" href="main.php?cmd=70list">List </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=71shopping">Shopping </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=72cart">Cart </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=73cart">Cart (Table2) </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=74cart">Cart (Join) </a></li>
 					</ul>
 				</li>
 
