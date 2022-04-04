@@ -40,6 +40,33 @@
         ";  
     }
 
+    if(isset($mode ) and $mode == "update")
+    {
+        if(isset($_POST["idx"]))
+        {
+            $idx = $_POST["idx"];
+        }
+        //$age = 77;
+        $sql = " UPDATE models SET 
+                    models='$models', size='$size',
+                    color='$color', price='$price'
+                WHERE idx='$idx' ";
+        
+        $result = mysqli_query($conn, $sql);
+        $affectedCount = mysqli_affected_rows($conn);
+        if($affectedCount ==1)
+            $msg = "변경 성공";
+        else
+            $msg = "변경 실패";
+
+        echo " $sql
+        <script>
+            alert('$msg');
+            location.href='main.php?cmd=$cmd';
+        </script>
+        ";  
+    }
+
 ?>
 
 <form method="post" action="main.php?cmd=<?php echo $cmd?>">
@@ -92,16 +119,20 @@
     {
         // 출력
         ?>
+        <form method="post" action="main.php?cmd=<?php echo $cmd?>">
+        <input type="hidden" name="idx" value="<?php echo $data["idx"] ?>">
+        <input type="hidden" name="mode" value="update">
         <div class="row">
             <div class="col colLine"><?php echo $data["idx"] ?></div>
-            <div class="col colLine"><?php echo $data["models"] ?></div>
-            <div class="col colLine"><?php echo $data["size"] ?></div>
-            <div class="col colLine"><?php echo $data["color"] ?></div>
-            <div class="col colLine"><?php echo $data["price"] ?></div>
+            <div class="col colLine"><input type="text" name="models" class="form-control" value="<?php echo $data["models"] ?>" ></div>
+            <div class="col colLine"><input type="text" name="size" class="form-control" value="<?php echo $data["size"] ?>" ></div>
+            <div class="col colLine"><input type="text" name="color" class="form-control" value="<?php echo $data["color"] ?>" ></div>
+            <div class="col colLine"><input type="text" name="price" class="form-control" value="<?php echo $data["price"] ?>" ></div>
             <div class="col colLine">
-                <button type="button" class="btn btn-primary btn-sm" onClick=getUserInfo(<?php echo $data["idx"] ?>)>보기</button>
+                <button type="submit" class="btn btn-primary btn-sm" >수정</button>
             </div>
         </div>
+        </form>
         <?php
         $data = mysqli_fetch_array($result);
     }
