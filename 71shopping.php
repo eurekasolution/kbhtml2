@@ -23,8 +23,42 @@
         ";       
     }
 
+    if(isset($_POST["mode"]))
+    {
+        $mode = $_POST["mode"];
+    }
+
+    if(isset($mode) and $mode == "putcart")
+    {
+        // idx, size, color, count
+        $size = $_POST["size"];
+        $color = $_POST["color"];
+        $count = $_POST["count"];
+        $price = $_POST["price"];
+
+        if(isset($_SESSION[$sessId]))
+            $id = $_SESSION[$sessId];
+        else
+            $id = "";
+
+        $cartSql = "INSERT INTO cart
+                 (id, midx, size, color, count, price, time)
+                 values 
+                 ('$id', '$idx', '$size', '$color', '$count', '$price', '$_SESSION[$sessTime]')";
+        $cartResult = mysqli_query($conn, $cartSql);
+        echo "
+        <script>
+            alert('장바구니에 담았습니다.');
+            location.href='main.php?cmd=$cmd&idx=$idx';
+        </script>
+        ";
+    }
+
+
 ?>
 
+<form method="post" action="main.php?cmd=<?php echo $cmd ?>&idx=<?php echo $idx?>">
+<input type="hidden" name="mode" value="putcart">
 <div class="row">
     <div class="col-4 colLine">
         <div class="row">
@@ -56,7 +90,7 @@
         <div class="row">
             <div class="col-4 colLine">가격</div>
             <div class="col colLine">
-                <input type="text" id="price" class="form-control" value="<?php echo $data["price"]?>" readonly>
+                <input type="text" id="price" name="price" class="form-control" value="<?php echo $data["price"]?>" readonly>
             </div>
         </div>
 
@@ -117,13 +151,14 @@
         </div>
         <div class="row">
             <div class="col colLine text-center">
-                <button type="button" class="btn btn-outline-primary">장바구니</button>
+                <button type="submit" class="btn btn-outline-primary">장바구니(Form)</button> 
+                <button type="button" class="btn btn-outline-primary">장바구니(Ajax)</button>
             </div>
         </div>
     </div>
 
 </div>
-
+</form>
 
 <script>
     function updatePrice()

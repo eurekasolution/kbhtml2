@@ -237,10 +237,14 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
         size    char(50),
         color   char(50) ,
         count   int(3) default '0',
+        price   int(10) default '0',
+        time    char(20), -- session time 
         
         primary key(idx)
     );
 
+
+    alter table cart add price int(10) default '0' after count;
 
 
 
