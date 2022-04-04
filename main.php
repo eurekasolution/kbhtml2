@@ -154,7 +154,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=67graph">방문자 그래프 </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=69model">Model </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=70list">List </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
 					</ul>
 				</li>
