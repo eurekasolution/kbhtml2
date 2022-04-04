@@ -218,6 +218,18 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
 
     cacti
 
+    // 220,230,240,250,260
+    create table models (
+        idx     int(10) auto_increment,
+        models  char(30) default 'no title',
+        size    char(50) default '220,230,240,250,260',
+        color   char(50) default '빨강,파랑,노랑',
+        price   int(10) default '10000', 
+        primary key(idx)
+    );
+
+    insert into models (models, price) values('나이키 러닝화', '12000');
+
 http://naver.me/FwkKZweA
 
 

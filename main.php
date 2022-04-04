@@ -152,7 +152,10 @@
 						<li><a class="dropdown-item" href="main.php?cmd=65graph">온도/습도 그래프 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=66generator">은행 방문자 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=67graph">방문자 그래프 </a></li>					
-						<li><a class="dropdown-item" href="main.php?cmd=57table">테이블 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=69model">Model </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
 					</ul>
 				</li>
 
