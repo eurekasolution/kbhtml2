@@ -155,7 +155,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=69model">Model </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=70list">List </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=71shopping">Shopping </a></li>
 					</ul>
 				</li>
 
