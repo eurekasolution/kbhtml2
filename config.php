@@ -3,6 +3,9 @@
     $sessName = "__kbstar_name__";
     $sessId = "__kbstar_id__";
     $sessLevel = "__kbstar_level__";
+    $sessTime = "__kbstar_time__";
+
+
     $confTest =  1234;
 
     $levelList[1] = "회원";

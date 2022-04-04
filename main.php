@@ -6,7 +6,25 @@
 	include "config.php";
 	include "db.php";
 
+
+	
+
+       
+	date_default_timezone_set("Asia/Seoul");
 	$conn = connectDB();
+
+	function getNow()
+	{
+		return date("YmdHis");
+	}
+
+	if(!isset($_SESSION[$sessTime]))
+	{
+		$_SESSION[$sessTime] = getNow();
+	}
+
+	// cat sess
+	//echo $_SESSION[$sessTime] ;
 ?>
 <!doctype html> 
 <html lang="ko"> 

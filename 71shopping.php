@@ -106,15 +106,37 @@
         <div class="row">
             <div class="col-4 colLine">수량</div>
             <div class="col colLine">
-                <input type="number" id="count" value="1" max="10" min="1" class="form-control">
+                <input type="number" id="count" name="count" value="1" max="10" min="1" class="form-control" onChange=updatePrice()>
             </div>
         </div>
         <div class="row">
             <div class="col-4 colLine">합계</div>
             <div class="col colLine">
-                <input type="text" id="total" value="1000" class="form-control" readonly>
+                <input type="text" id="total" value="<?php echo $data["price"]?>" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col colLine text-center">
+                <button type="button" class="btn btn-outline-primary">장바구니</button>
             </div>
         </div>
     </div>
 
 </div>
+
+
+<script>
+    function updatePrice()
+    {
+        let price = $("#price").val();
+        let count = document.querySelector("#count").value;
+        let total = price * count;
+        $("#total").val(total);
+    }
+</script>
+
+<?php
+   $now = getNow();
+   echo "now = $now";
+   
+?>

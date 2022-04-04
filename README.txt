@@ -230,6 +230,20 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
 
     insert into models (models, price) values('나이키 러닝화', '12000');
 
+    create table cart (
+        idx     int(10) auto_increment,
+        id      char(20),
+        midx    int(10) default '0',
+        size    char(50),
+        color   char(50) ,
+        count   int(3) default '0',
+        
+        primary key(idx)
+    );
+
+
+
+
 http://naver.me/FwkKZweA
 
 
