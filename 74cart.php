@@ -32,8 +32,19 @@
                 cart.size as csize, cart.count as ccount,
                 models.models as mmodels, models.price as mprice ,
                 models.color as mcolor
-            FROM cart, models 
-            WHERE cart.midx = models.idx ";
+            FROM cart
+            JOIN models on ( cart.midx = models.idx ) ";
+/*
+    $sql = "SELECT 
+        *
+    FROM cart
+    JOIN models on ( cart.midx = models.idx ) 
+    JOIN kb_customer on (cart.idx = kb_customer.idx) ";
+*/
+
+        // FROM orders
+        // JOIN users on ( orders.uidx = users.idx)
+        // JOIN items on ( orders.idx = items.oidx)
 
     echo "sql = $sql <br>";
     $result = mysqli_query($conn, $sql);

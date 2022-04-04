@@ -248,6 +248,42 @@ SELECT 옵션 : WHERE, ORDER BY, LIMIT
 
 
 
+    create table users (
+        idx int(10) auto_increment,  -- 37
+        name    char(30), -- 홍길동 
+        id      char(20), -- kdhong
+        -- 나머지 생략
+
+        primary key(idx)
+    );
+
+    create table orders (
+        idx int(10) auto_increment,   -- 123
+        uidx    int(10), -- 37
+        address char(100),
+        mobile  char(20),
+
+        -- 나머지 생략, 금액, ...
+
+        primary key(idx)
+    );
+
+    create table items (
+        idx int(10) auto_increment,   -- 3456
+        oidx    int(10), -- 123
+        color char(100),
+        size  char(20),
+        price int(10),
+
+        -- 나머지 생략, 금액, ...
+
+        primary key(idx)
+    );
+
+
+
+
+
 http://naver.me/FwkKZweA
 
 
