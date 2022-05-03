@@ -59,7 +59,8 @@
         sort($files);
 
 
-    echo "sess dir = ". $_SESSION[$sess_dir]."<br>";    
+    echo "sess dir = ". $_SESSION[$sess_dir]."<br>";  
+    
     echo "
     <table class='table'>
     ";
@@ -88,8 +89,13 @@
     {
         ?>
         <tr>
-            <td> <span class='material-icons'>description</span> 
-                <?php echo $files[$fileCnt]?></td>
+            <td> 
+                <a href='<?php echo $_SERVER["PHP_SELF"] ?>?cmd=<?php echo $cmd?>&rfile=<?php echo $files[$fileCnt]?>'>
+                <span class='material-icons'>description</span> 
+                <?php echo $files[$fileCnt]?>
+                </a>
+            
+            </td>
         </tr>
 
         <?php
