@@ -96,6 +96,9 @@
 
     echo "
     <table class='table'>
+        <tr>
+            <td>
+                <table class='table'>
     ";
 
     $dirCnt = 0;
@@ -117,6 +120,13 @@
         $dirCnt ++;
     }
 
+        echo "
+                </table>
+            </td>
+            <td>
+                <table class='table'>
+        ";
+
     $fileCnt = 0;
     while(isset($files[$fileCnt]) and $files[$fileCnt])
     {
@@ -136,6 +146,9 @@
     }
 
     echo "
+                </table>
+            </td>
+        </tr>
     </table>";
 
 
