@@ -186,7 +186,7 @@
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Secure</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="main.php?cmd=80upload">Upload</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=59birth">Birth</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=82ftp">FTP</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=60customer">고객관리 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=61pi">Pi Chart </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=62donut">Donut Chart </a></li>

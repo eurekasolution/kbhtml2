@@ -7,6 +7,14 @@
         return $fileInfo["extension"];
     }
 
+    function makeFileName()
+    {
+        // 20220503123456
+
+        $current = Date('YmdHis');
+        return $current;
+    }
+
 
     if(isset($_GET["mode"]) and $_GET["mode"]=="up")
     {
@@ -19,9 +27,17 @@
             $fileName = $_FILES["upfile"]["name"];
             $ext = getFileExt($fileName);
             echo "ext = $ext <br>";
+            $now = makeFileName();
+            echo "now = $now <br>";
+            $saveFile = "$now.$ext";
 
             // copy
-            move_uploaded_file($_FILES["upfile"]["tmp_name"], "data/secure/$fileName");
+
+
+
+            @chmod("data", 0777);
+            @chmod("data/secure", 0777);
+            @move_uploaded_file($_FILES["upfile"]["tmp_name"], "data/secure/$saveFile");
 
 
         }else
