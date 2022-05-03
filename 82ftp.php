@@ -38,6 +38,19 @@
     }
 
 
+    function readFileKB($path)
+    {
+        // error
+        if( !$handler = fopen($path, 'r'))
+        {
+            return "File Open Error";
+        }
+
+        $fileContent = file_get_contents($path, true);
+        return $fileContent;
+    }
+
+
     $sess_dir = "sess_dir";
     
     if(!isset($_SESSION[$sess_dir]) or $_SESSION[$sess_dir]== "")
@@ -61,6 +74,26 @@
 
     echo "sess dir = ". $_SESSION[$sess_dir]."<br>";  
     
+    if(isset($_GET["rfile"]))
+    {
+        $memo = readFileKB($_SESSION[$sess_dir]."/".$_GET["rfile"]);
+    }else
+    {
+        $memo = "파일읽기 아님";
+    }
+
+
+    ?>
+    <div class="row">
+        <div class="col">
+            <textarea class="form-control" rows="10"><?php echo $memo?></textarea>
+        </div>
+    </div>
+    <?php
+
+
+
+
     echo "
     <table class='table'>
     ";
@@ -104,4 +137,7 @@
 
     echo "
     </table>";
+
+
+
 ?>
