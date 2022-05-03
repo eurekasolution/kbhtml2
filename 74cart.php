@@ -27,12 +27,15 @@
     // cart : idx, color, size, count   (midx)
     // models : models, photo,          (idx)
 
+    $ip = $_SERVER["REMOTE_ADDR"];
+    echo "ip = $ip <br>";
+
     $sql = "SELECT 
                 cart.idx as cidx, cart.color as ccolor, 
                 cart.size as csize, cart.count as ccount,
                 models.models as mmodels, models.price as mprice ,
                 models.color as mcolor
-            FROM cart
+            FROM cart 
             JOIN models on ( cart.midx = models.idx ) ";
 /*
     $sql = "SELECT 

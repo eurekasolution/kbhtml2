@@ -158,10 +158,34 @@
 					</ul>
 				</li>
 
+				
+
 				<li class="nav-item dropdown ms-4">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Database</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="main.php?cmd=58insert">Insert</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=59birth">Birth</a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=60customer">고객관리 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=61pi">Pi Chart </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=62donut">Donut Chart </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=64generator">Generator </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=65graph">온도/습도 그래프 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=66generator">은행 방문자 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=67graph">방문자 그래프 </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=69model">Model </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=70list">List </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=71shopping">Shopping </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=72cart">Cart </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=73cart">Cart (Table2) </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=74cart">Cart (Join) </a></li>
+					</ul>
+				</li>
+
+				<li class="nav-item dropdown ms-4">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Secure</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="main.php?cmd=80upload">Upload</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=59birth">Birth</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=60customer">고객관리 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=61pi">Pi Chart </a></li>
