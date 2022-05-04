@@ -82,13 +82,67 @@
         $memo = "파일읽기 아님";
     }
 
+    if(isset($_POST["fname"]) and strlen($_POST["fname"])>=1)
+    {
+        echo "fname = " . $_POST["fname"] . "<br>";
+        $fileName = $_POST["fname"];
+
+        $pathFile = $_SESSION[$sess_dir] . "/" . $fileName;
+
+        if(file_exists($pathFile))
+        {
+
+        }else
+        {
+            if(!$handler = fopen($pathFile, 'w'))
+            {
+                echo "open error<br>";
+            }
+            
+            echo "content = $content <br>";
+
+            if(fwrite($handler, $_POST["content"]) == false)
+                echo "fwrite error<br>";
+
+            echo "
+            <script>
+                alert('성공');
+                // 
+            </script>
+            ";
+
+        }
+
+
+    }else
+    {
+        echo "no fname <br>";
+    }
+
+
 
     ?>
+    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]?>?cmd=<?php echo $cmd?>">
     <div class="row">
         <div class="col">
-            <textarea class="form-control" rows="10"><?php echo $memo?></textarea>
+            <textarea class="form-control" name="content"  rows="10"><?php echo $memo?></textarea>
         </div>
     </div>
+    <div class="row">
+        <div class="col-2">
+            파일명
+        </div>
+        <div class="col">
+            <input type="text" name="fname" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">등록/수정</button>
+        </div>
+    </div>
+</form>
+
     <?php
 
 
