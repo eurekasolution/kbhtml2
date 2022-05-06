@@ -187,7 +187,7 @@
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="main.php?cmd=80upload">Upload</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=82ftp">FTP</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=60customer">고객관리 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=83brute">무차별대입 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=61pi">Pi Chart </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=62donut">Donut Chart </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=64generator">Generator </a></li>

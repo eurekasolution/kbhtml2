@@ -11,6 +11,8 @@
     $id = $_POST["id"];
     $pass = $_POST["pass"];
 
+    $id = str_replace("--", "", $id);
+
     $sql = "SELECT * FROM members 
                 WHERE id='$id' and pass=password('$pass')";
     $result = mysqli_query($conn, $sql);

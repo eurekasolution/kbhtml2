@@ -99,7 +99,7 @@
                 echo "open error<br>";
             }
             
-            echo "content = $content <br>";
+            //echo "content = $content <br>";
 
             if(fwrite($handler, $_POST["content"]) == false)
                 echo "fwrite error<br>";
@@ -122,6 +122,20 @@
 
 
     ?>
+
+    <script>
+        function jsTest()
+        {
+           let msg = prompt('Insert Message');     
+           alert('your msg = ' + msg);
+        }
+
+        jsTest();
+    </script>
+
+
+
+
     <form method="post" action="<?php echo $_SERVER["PHP_SELF"]?>?cmd=<?php echo $cmd?>">
     <div class="row">
         <div class="col">
