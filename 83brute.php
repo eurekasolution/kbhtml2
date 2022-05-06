@@ -8,16 +8,27 @@
 
     $exitFlag = false;
 
-    for($i= ord('a') ; $i<=ord('z'); $i++)
+    $letters = "abcdefghijklmnopqrstuvwxyz0123456789";
+    $lastLetter = $letters[strlen($letters)-1];
+    $lastIndex = strlen($letters) -1;
+    /*
+    for($x = 0; $x < strlen($test); $x++)
     {
-        for($j= ord('a') ; $j<=ord('z'); $j++)
+        echo "$x : " . $test[$x] . "<br>";
+    }
+    */
+
+
+    for($i= 0 ; $i<=$lastIndex; $i++)
+    {
+        for($j=0; $j<=$lastIndex; $j++)
         {
-            for($k= ord('a') ; $k<=ord('z'); $k++)
+            for($k= 0 ; $k<=$lastIndex; $k++)
             {
-                for($l= ord('a') ; $l<=ord('z'); $l++)
+                for($l= 0 ; $l<=$lastIndex; $l++)
                 {
                     $cnt ++;
-                    $pass = chr($i) .chr($j) .chr($k) .chr($l);
+                    $pass = $letters[$i] .$letters[$j] .$letters[$k] .$letters[$l];
                     //echo "$pass<br>";
 
                     $sql = "select * from members where id='test' and pass=password('$pass') ";
