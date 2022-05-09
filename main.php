@@ -34,6 +34,24 @@
 
 	$uri = $_SERVER["REQUEST_URI"];
 
+	$sql = "SELECT ADDDATE(now(), INTERVAL -1 MINUTE) as checktime";
+	$result = mysqli_query($conn, $sql);
+	$data = mysqli_fetch_array($result);
+
+	$checkTime = $data["checktime"];
+	$sql = "SELECT count(*) as ipcount from log_table where time>'$checkTime' 
+				and ip='$ip' ";
+	$result = mysqli_query($conn, $sql);
+	$data = mysqli_fetch_array($result);
+
+	echo "1분내 클릭 횟수 : ". $data["ipcount"] . "<br>";
+
+	if($data["ipcount"] >10)
+	{
+		
+	}
+
+
 	$sql = "INSERT INTO log_table (ip, cmd, uri, time) VALUES 
 				('$ip', '$pcmd', '$uri', now() )";
 
