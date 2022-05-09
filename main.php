@@ -206,7 +206,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=82ftp">FTP</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=83brute">무차별대입 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=84brute">무차별대입</a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=62donut">Donut Chart </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=85log">Log 관리 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=64generator">Generator </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=65graph">온도/습도 그래프 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=66generator">은행 방문자 </a></li>
