@@ -5,6 +5,8 @@
     $sessLevel = "__kbstar_level__";
     $sessTime = "__kbstar_time__";
 
+    $sessLimit = "__kbstar_limit__";
+
 
     $confTest =  1234;
 
