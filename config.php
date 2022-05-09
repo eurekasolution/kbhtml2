@@ -6,6 +6,7 @@
     $sessTime = "__kbstar_time__";
 
     $sessLimit = "__kbstar_limit__";
+    $sessOrder = "__kbstar_order__";
 
 
     $confTest =  1234;
