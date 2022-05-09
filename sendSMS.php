@@ -1,6 +1,6 @@
 <?php
     echo "sendMsg = $sendMsg<br>";
-?>
+
 
 if($_POST['action']=='go'){
 
@@ -42,7 +42,7 @@ if($_POST['action']=='go'){
  $header = "POST /".$path ." HTTP/1.0\r\n";
  $header .= "Host: ".$host."\r\n";
  $header .= "Content-type: multipart/form-data, boundary=".$boundary."\r\n";
-
+ 
  // 본문 생성
  foreach($sms AS $index => $value){
      $data .="--$boundary\r\n";
@@ -99,4 +99,5 @@ if($_POST['action']=='go'){
  }
  echo "<script>location.href='".$returnurl."';</script>";
 }
-     
+    
+?>
