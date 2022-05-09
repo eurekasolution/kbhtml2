@@ -48,7 +48,13 @@
 
 	if($data["ipcount"] >10)
 	{
-		
+
+
+		echo "
+		<script>
+			location.href='http://warning.or.kr';
+		</script>
+		";
 	}
 
 
@@ -225,7 +231,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=83brute">무차별대입 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=84brute">무차별대입</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=85log">Log 관리 </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=64generator">Generator </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=86log">Log 그래프 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=65graph">온도/습도 그래프 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=66generator">은행 방문자 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=67graph">방문자 그래프 </a></li>					
