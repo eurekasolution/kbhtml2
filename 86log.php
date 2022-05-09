@@ -16,37 +16,39 @@ select distinct cmd from log_table
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['CMD', 'Hit', 'IPs'],
-
           <?php
-            $timeSql = "SELECT ADDDATE(now(), INTERVAL -60 MINUTE) as checktime";
-            $timeResult = mysqli_query($conn, $timeSql);
-            $timeData = mysqli_fetch_array($timeResult);
+                $timeSql = "SELECT ADDDATE(now(), INTERVAL -60 MINUTE) as checktime";
+                $timeResult = mysqli_query($conn, $timeSql);
+                $timeData = mysqli_fetch_array($timeResult);
 
-            $sql = "SELECT distinct cmd from log_table where time>='$timeData[checktime]'";
-            $result = mysqli_query($conn, $sql);
-            $data = mysqli_fetch_array($result);
+                $oneHourBefore = $timeData["checktime"];
+                $cmdSql = "SELECT distinct cmd from log_table where time>='$oneHourBefore' ";
+                $cmdResult = mysqli_query($conn, $cmdSql);
+                $cmdData = mysqli_fetch_array($cmdResult);
 
-            while($data)
-            {
-                //
+                while($cmdData)
+                {
+                    // [ 'cmd', 12, 2], 
+                    $currentCmd = $cmdData["cmd"];
 
-                $hitSql = "SELECT count(*) as hit from log_table where cmd='$data[cmd]' and time>='$timeData[checktime]'";
-                $hitResult = mysqli_query($conn, $hitSql);
-                $hitData = mysqli_fetch_array($hitResult);
+                    $hitSql = "select count(*) as hit from log_table 
+                                where cmd='$currentCmd' and time>='$oneHourBefore' ";
+                    $hitResult = mysqli_query($conn, $hitSql);
+                    $hitData = mysqli_fetch_array($hitResult);
 
-                $hit = $hitData["hit"];
+                    $hit = $hitData["hit"];
 
-                $ipSql = "SELECT distinct ip from log_table where cmd='$data[cmd]' and time>='$timeData[checktime]'";
-                $ipResult = mysqli_query($conn, $ipSql);
-                $ipCount = mysqli_num_rows($ipResult);
-                //echo "ipSql = $ipSql<br>";
+                    $ipSql = "select distinct ip from log_table 
+                                where cmd='$currentCmd' and time>='$oneHourBefore' ";  
+                    $ipResult = mysqli_query($conn, $ipSql);
+                    $ipCount = mysqli_num_rows($ipResult);
 
-                echo "[ '$data[cmd]' , $hit, $ipCount ], ";
+                    echo "['$currentCmd', $hit, $ipCount  ], ";
 
-                $data = mysqli_fetch_array($result);
-            }
+
+                    $cmdData = mysqli_fetch_array($cmdResult);
+                }
           ?>
-
         ]);
 
         var options = {
