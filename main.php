@@ -49,13 +49,10 @@
 	if($data["ipcount"] >10)
 	{
 
-		$sendMsg = "비정상적인 접근이 감지되었습니다.
-KBstar.com";
-		include "sendSMS.php";
 
 		echo "
 		<script>
-			alert('비정상');
+			//alert('비정상');
 			//location.href='http://warning.or.kr';
 		</script>
 		";

@@ -1,11 +1,11 @@
-최근 1시간동안 접속페이지별, ip갯수를 그래프로 그리고 싶습니다
-top 10만 그래프로 표시하시오
+<?php
 
-최근 한시간...
+$sendMsg = "비정상적인 접근이 감지되었습니다.
+KBstar.com";
+		include "sendSMS.php";
 
-$sql = "SELECT ADDDATE(now(), INTERVAL -60 MINUTE) as checktime";
 
-select distinct cmd from log_table 
+?>
 <div class='row'>
     <div class='col colLine'>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
