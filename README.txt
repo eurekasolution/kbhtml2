@@ -1,5 +1,16 @@
 Fake Data : http://naver.me/5okJP3J4
 
+
+create table log_table (
+    idx   int(20) auto_increment,
+    ip      char(20),
+    cmd     char(30),
+    uri     char(255),
+    time    datetime,
+    primary key(idx)
+);
+
+
 1. DATABASE 접속..
 
    mysql -u 사용자명 데이터베이스명 -p

@@ -25,6 +25,23 @@
 
 	// cat sess
 	//echo $_SESSION[$sessTime] ;
+
+	$ip = $_SERVER["REMOTE_ADDR"];
+	if(!isset($_GET["cmd"]))
+		$pcmd = "";
+	else
+		$pcmd = $_GET["cmd"];
+
+	$uri = $_SERVER["REQUEST_URI"];
+
+	$sql = "INSERT INTO log_table (ip, cmd, uri, time) VALUES 
+				('$ip', '$pcmd', '$uri', now() )";
+
+	$result = mysqli_query($conn, $sql);
+	//echo "sql = $sql <br>";
+
+
+
 ?>
 <!doctype html> 
 <html lang="ko"> 
@@ -188,7 +205,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=80upload">Upload</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=82ftp">FTP</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=83brute">무차별대입 </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=61pi">Pi Chart </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=84brute">무차별대입</a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=62donut">Donut Chart </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=64generator">Generator </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=65graph">온도/습도 그래프 </a></li>

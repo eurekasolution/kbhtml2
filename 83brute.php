@@ -8,7 +8,7 @@
 
     $exitFlag = false;
 
-    $letters = "abcdefghijklmnopqrstuvwxyz0123456789";
+    $letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     $lastLetter = $letters[strlen($letters)-1];
     $lastIndex = strlen($letters) -1;
     /*
