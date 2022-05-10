@@ -15,10 +15,10 @@
         $sql = "insert into bbs (title, content) values('$title', '$content') ";
         $result = mysqli_query($conn, $sql);
 
-        echo "
+        echo "$sql
         <script>
             alert('글 등록 완료');
-            location.href='main.php?cmd=$cmd';
+            //location.href='main.php?cmd=$cmd';
         </script>
         ";
     }
