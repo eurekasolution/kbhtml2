@@ -1,4 +1,38 @@
 <script>
+    function getCookie(cookieName)
+    {
+        let cookie = cookieName + '=';
+        if(document.cookie.length > 0) // 저장된 쿠키가 있으면.
+        {
+            var offset = document.cookie.indexOf(cookie);
+
+            if(offset != -1)
+            {
+                offset += cookie.length;
+                end = document.cookie.indexOf(';', offset);
+
+                if(end == -1)
+                {
+                    end = document.cookie.length;
+                }    
+
+                var returnValue = unescape(document.cookie.substring(offset, end));
+                return returnValue;
+            }
+        }
+    }
+    function setCookieIfSaved()
+    {
+        // kbstarid, kbstarpass 저장된 것이 있으면, 가져와서 값넣기
+
+        if(getCookie('kbstarid'))
+        {
+            var thisId = getCookie('kbstarid');
+            alert(thisId);
+        }
+    }
+
+
     function setCookie(cookieName, value, expireDay)
     {
         let todayDate = new Date();
@@ -55,7 +89,7 @@
         <input type="text" name="kbstarid" id="kbstarid" class="form-control">
     </div>
     <div class="col-2">
-        <input type="password" value="1111" name="kbstarpass" id="kbstarpass" class="form-control">
+        <input type="password"  name="kbstarpass" id="kbstarpass" class="form-control">
     </div>
     <div class="col-2">
         <input type="checkbox" name="saveid" id="saveid"> ID저장
@@ -69,3 +103,6 @@
 </div>
 </form>
 
+<script>
+    setCookieIfSaved();
+</script>
