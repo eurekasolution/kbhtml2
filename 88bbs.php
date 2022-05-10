@@ -12,6 +12,17 @@
                 );
         */
 
+        // < : &lt;
+
+        $title = str_replace("<", "&lt;", $title);
+        $title = str_replace(">", "&gt;", $title);
+
+        $content = str_replace("<", "&lt;", $content);
+        $content = str_replace(">", "&gt;", $content);
+
+        $title = addslashes($title);
+        $content = addslashes($content);
+        
         $sql = "insert into bbs (title, content) values('$title', '$content') ";
         $result = mysqli_query($conn, $sql);
 
@@ -72,7 +83,7 @@
         <tr>
             <td><?php echo $data["idx"]?></td>
             <td><?php echo $data["title"]?></td>
-            <td><?php echo $data["content"]?></td>
+            <td><textarea rows=5><?php echo $data["content"]?></textarea></td>
         </tr>
         <?php
         $data = mysqli_fetch_array($result);

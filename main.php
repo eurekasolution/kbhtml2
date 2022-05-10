@@ -234,7 +234,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=85log">Log 관리 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=86log">Log 그래프 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=87bbs">미니게시판 </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=66generator">은행 방문자 </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=88bbs">보안게시판 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=67graph">방문자 그래프 </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=69model">Model </a></li>
