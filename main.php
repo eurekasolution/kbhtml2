@@ -82,6 +82,7 @@
  		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script> 
               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
 
@@ -235,7 +236,7 @@
 						<li><a class="dropdown-item" href="main.php?cmd=86log">Log 그래프 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=87bbs">미니게시판 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=88bbs">보안게시판 </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=67graph">방문자 그래프 </a></li>					
+						<li><a class="dropdown-item" href="main.php?cmd=89cookie">쿠키 </a></li>					
 						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=69model">Model </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=70list">List </a></li>
