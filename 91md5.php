@@ -60,7 +60,7 @@
         //alert(todayDate.toGMTString());
     }
 
-    function checkCookie()
+    function checkCookieMd5()
     {
         let kbstarid = $("#kbstarid").val();
         //let kbstarid2 = document.querySelector("#kbstarid").value();
@@ -88,22 +88,57 @@
             setCookie('kbstarpass', kbstarpass, 0);
         }
 
+        let md5pass = kbmd5( kbstarpass);
+        $("#kbstarpass").val("");
+        $("#kbstarpassmd5").val(md5pass);
+
+
+        //return false;
     }
 
 </script>
 
+<?php
+
+    if(isset($_GET["mode"]) and $_GET["mode"]=="login")
+    {
+        $myid = $_POST["kbstarid"];
+        $mypass = $_POST["kbstarpass"];
+        $mypass2 = $_POST["kbstarpassmd5"];
+        echo "id = $myid, pass = $mypass, pass2 = $mypass2<br>";
+    }
+    /*
+        create table member2 (
+            idx int(10) auto_increment,
+            id  char(20) unique,
+            pass char(255),
+            name char(20),
+            level int(3) default '1',
+
+            primary key(idx)
+        );
+
+        insert into member2 (id, pass, name, level) 
+                    values('admin', 'b59c67bf196a4758191e42f76670ceba', '관리자', '9');
+        insert into member2 (id, pass, name, level) 
+                    values('test', 'b59c67bf196a4758191e42f76670ceba', '테스터', '1');
+
+    */
+
+?>
 
 <div class="row">
     <div class="col">Cookie</div>
 </div>
 
-<form>
+<form method="post" action="main.php?cmd=<?php echo $cmd?>&mode=login" onSubmit="return checkCookieMd5()">
 <div class="row">
     <div class="col-2">
         <input type="text" name="kbstarid" id="kbstarid" class="form-control">
     </div>
     <div class="col-2">
         <input type="password"  name="kbstarpass" id="kbstarpass" class="form-control">
+        <input type="text"  name="kbstarpassmd5" id="kbstarpassmd5" class="form-control">
     </div>
     <div class="col-2">
         <input type="checkbox" name="saveid" id="saveid"> ID저장
@@ -112,7 +147,7 @@
         <input type="checkbox" name="savepass" id="savepass"> PW저장
     </div>
     <div class="col-2">
-        <button type="button" class="btn btn-primary" onClick=checkCookie()> 로그인</button>
+        <button type="submit" class="btn btn-primary" > 로그인</button>
     </div>
 </div>
 </form>
@@ -121,3 +156,86 @@
     setCookieIfSaved();
 </script>
 
+<?php
+    if(isset($_GET["mode"]) and $_GET["mode"] == "insert")
+    {
+        $title = $_POST["title"];
+        $content = $_POST["content"];
+        /*
+                create table bbs (
+                    idx int(10) auto_increment,
+                    title   char(100),
+                    content text,
+                    primary key(idx)
+                );
+        */
+
+        $sql = "insert into bbs (title, content) values('$title', '$content') ";
+        $result = mysqli_query($conn, $sql);
+
+        echo "<xmp>$sql</xmp>
+        <script>
+            alert('글 등록 완료');
+            location.href='main.php?cmd=$cmd';
+        </script>
+        ";
+    }
+?>
+
+
+<div class="row">
+    <div class="col">
+        XSS 테스트 게시판
+    </div>
+</div>
+
+<form method="post" action="main.php?cmd=<?php echo $cmd?>&mode=insert">
+<div class="row">
+    <div class="col-2">
+        제목
+    </div>
+    <div class="col">
+        <input type="text" name="title" class="form-control">
+    </div>
+</div>
+<div class="row">
+    <div class="col-2">
+        내용
+    </div>
+    <div class="col">
+        <textarea  name="content" class="form-control" rows="5"></textarea>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <button type="submit" class="btn btn-primary">등록</button>
+    </div>
+</div>
+</form>
+
+<div class="row">
+    <table class='table'>
+        <tr>
+            <td>순서</td>
+            <td>제목</td>
+            <td>내용</td>
+        </tr>
+<?php
+    $sql = "select * from bbs order by idx desc";
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_array($result);
+    while($data)
+    {
+        ?>
+        <tr>
+            <td><?php echo $data["idx"]?></td>
+            <td><?php echo $data["title"]?></td>
+            <td><?php echo $data["content"]?></td>
+        </tr>
+        <?php
+        $data = mysqli_fetch_array($result);
+    }
+
+?>
+    </table>
+</div>

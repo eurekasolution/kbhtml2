@@ -65,7 +65,9 @@
 	$result = mysqli_query($conn, $sql);
 	//echo "sql = $sql <br>";
 
-
+	$pass = "1111";
+	$pass = md5($pass);
+	echo "pass = $pass <br>";
 
 ?>
 <!doctype html> 
@@ -83,6 +85,7 @@
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
 
@@ -93,6 +96,19 @@
 					//$(this).hide();
 				});
 			});
+
+			function kbmd5(pass)
+			{
+				return CryptoJS.MD5(pass).toString();
+			}
+
+
+			//let pass = "1111";
+			//let md5pass = CryptoJS.MD5(pass).toString();
+			//let md5pass = kbmd5(pass);
+			//alert("pass = " + md5pass);
+
+
 		</script>
 
 	</head> 
@@ -237,8 +253,8 @@
 						<li><a class="dropdown-item" href="main.php?cmd=87bbs">미니게시판 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=88bbs">보안게시판 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=89cookie">쿠키 </a></li>					
-						<li><a class="dropdown-item" href="main.php?cmd=68join">Join </a></li>
-						<li><a class="dropdown-item" href="main.php?cmd=69model">Model </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=90xss">XSS </a></li>
+						<li><a class="dropdown-item" href="main.php?cmd=91md5">MD5 </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=70list">List </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=71shopping">Shopping </a></li>
 						<li><a class="dropdown-item" href="main.php?cmd=72cart">Cart </a></li>
