@@ -28,7 +28,21 @@
         if(getCookie('kbstarid'))
         {
             var thisId = getCookie('kbstarid');
-            alert(thisId);
+            //alert(thisId); // 암호화된 id
+
+            var decrypto = CryptoJS.enc.Base64.parse(thisId);
+            $("#kbstarid").val( decrypto.toString(CryptoJS.enc.Utf8) );
+            $("#saveid").prop("checked", true);
+        }
+
+        if(getCookie('kbstarpass'))
+        {
+            var thisPass = getCookie('kbstarpass');
+            //alert(thisId); // 암호화된 id
+
+            var decrypto = CryptoJS.enc.Base64.parse(thisPass);
+            $("#kbstarpass").val( decrypto.toString(CryptoJS.enc.Utf8) );
+            $("#savepass").prop("checked", true);
         }
     }
 
