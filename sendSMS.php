@@ -9,10 +9,10 @@
     $sms['secure'] = base64_encode("35954e0b31ce614f01593a5046a79fd5") ;//인증키
     $sms['msg'] = base64_encode(stripslashes($sendMsg));
 
-    $sms['rphone'] = base64_encode("010-3540-8848");
+    $sms['rphone'] = base64_encode("010-0000-0000");
     $sms['sphone1'] = base64_encode("010");
-    $sms['sphone2'] = base64_encode("3540");
-    $sms['sphone3'] = base64_encode("8848");
+    $sms['sphone2'] = base64_encode("0000");
+    $sms['sphone3'] = base64_encode("0000");
 
     if(!isset($_POST['rdate']))
         $_POST['rdate'] = "";
