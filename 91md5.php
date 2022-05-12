@@ -92,7 +92,6 @@
         $("#kbstarpass").val("");
         $("#kbstarpassmd5").val(md5pass);
 
-
         //return false;
     }
 
